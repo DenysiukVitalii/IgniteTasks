@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<title>Calculator</title>
+<script>
+'use strict';
+
+function Calculator() {
+	this.a = 0;
+	this.b = 0;
+  this.read = function () {
+    this.a = +prompt("Input a:", 0);
+    this.b = +prompt("Input b:", 0);
+  }
+  this.sum = function() {
+    return this.a + this.b;
+  }
+  this.mul = function() {
+    return this.a * this.b;
+  }
+}
+
+var calculator = new Calculator();
+calculator.read();
+
+alert( "Сумма = " + calculator.sum() );
+alert( "Произведение = " + calculator.mul() );
+</script>
+</head>
+
+<body>
+ <!--html here-->
+</body>
+</html>

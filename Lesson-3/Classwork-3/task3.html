@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<title>Summator</title>
+<script>
+'use strict';
+
+function Summator() {
+  this.sum = function(a, b) {
+    return a + b;
+  }
+  this.run = function() {
+		let a, b;
+		a = +prompt("Input a:", 0);
+		b = +prompt("Input b:", 0);
+		return this.sum(a, b);
+  }
+}
+
+var summator = new Summator();
+alert(summator.sum(4,5));
+alert(summator.run());
+
+</script>
+</head>
+
+<body>
+ <!--html here-->
+</body>
+</html>
