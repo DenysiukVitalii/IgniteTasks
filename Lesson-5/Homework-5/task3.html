@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<title>Document</title>
+</head>
+<style>
+ #timer, #how {
+   font-size: 22px;
+   margin: 20px;
+   display: inline-block;
+ }
+ #timer {
+   margin-left: 0;
+ }
+</style>
+
+<body>
+<p id="how">Осталось времени:</p>
+<p id="timer"></p>
+
+<script>
+  function timer(time) {
+    var timerElement = document.getElementById('timer');
+
+    timerElement.textContent = time;
+
+    var timerID = setInterval(function() {
+      timerElement.textContent = time;
+      time--;
+
+      if (time < 3) timerElement.style.color = 'red';
+
+      if (time === -1) {
+        clearInterval(timerID);
+        timerElement.textContent = 'Время вышло!';
+      }
+    }, 1000);
+  }
+
+  timer(10);
+</script>
+</body>
+</html>

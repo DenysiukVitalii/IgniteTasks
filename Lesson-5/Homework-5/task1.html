@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<title>Запуск кода из строки. Eval.  </title>
+<!--
+    Функция eval(str) выполняет код и возвращает последнее вычисленное выражение.
+    В современном JavaScript она используется редко.
+-->
+<script>
+
+function solveIt() {
+  let boolExp,
+      input = 'Введите выражение',
+      expression,
+      answer;
+
+  while (!boolExp) {
+    boolExp = true;
+    expression = prompt(input);
+    try {
+      answer = eval(expression);
+      if (isNaN(answer)) throw new Error('Некорректный ввод!');
+    } catch(e) {
+      boolExp = false;
+      input = 'Ошибка ввода. Введите выражение заново: ';
+    }
+  }
+  alert('Ответ: ' + answer);
+}
+
+solveIt();
+
+</script>
+</head>
+
+<body>
+<!--html here -->
+</body>
+</html>
