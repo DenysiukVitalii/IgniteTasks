@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task-3 | Homework-6</title>
+</head>
+
+<body>
+  <div>
+   <h1>Heading 1</h1>
+   <div class="target">
+     <ul>
+       <li>Item 1</li>
+       <li id="li-target">Item 2</li>
+     </ul>
+   </div>
+ </div>
+
+ <script>
+
+ window.onload = function() {
+  if (document.documentElement.closest === undefined) {
+
+     Element.prototype.closest = function(css) {
+     var node = this;
+
+     while (node) {
+       if (node.matches(css)) return node;
+       else node = node.parentElement;
+     }
+
+     return null;
+   };
+
+  }
+
+  var element = document.getElementById('li-target');
+ 	console.log(element.closest('div'));
+
+ }
+ </script>
+</body>
+</html>
