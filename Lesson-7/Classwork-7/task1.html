@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task-1 | Classwork-7</title>
+</head>
+<style>
+
+  ul {
+    width: 200px;
+  }
+  ul li {
+    list-style: none;
+    padding: 10px;
+    border: 2px solid #000;
+    margin-bottom: 10px;
+  }
+  span {
+    background-color: red;
+    color: #fff;
+  }
+
+</style>
+<body>
+<ul>
+  <li>Item1</li>
+  <li>Item2</li>
+</ul>
+
+<script>
+  window.onload = function () {
+
+    var span = document.createElement('span');
+    var li1 = document.querySelector('ul li');
+    var where = 0;
+    span.innerHTML = " I'm span! ";
+
+	  function move(element, parent, where) {
+      switch (where) {
+        case 1: { parent.insertAdjacentElement("beforeBegin", element); break; }
+        case 2: { parent.insertAdjacentElement("afterBegin", element); break; }
+        case 3: { parent.insertAdjacentElement("beforeEnd", element); break; }
+        case 4: { parent.insertAdjacentElement("afterEnd", element); break; }
+        default: { parent.insertAdjacentElement("beforeBegin", element); break; }
+      }
+	  }
+
+    setInterval(function() {
+  	    where++;
+        move(span, li1, where);
+        if (where === 4) where = 0;
+    }, 400);
+
+  }
+</script>
+</body>
+</html>
