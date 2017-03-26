@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task-3 | Homework-7</title>
+</head>
+<style>
+    table {
+      border: 3px solid #000;
+      border-collapse: collapse;
+      margin: 40px auto;
+    }
+    td {
+  		height: 65px;
+  		width: 65px;
+  	}
+  	.black {
+  		background-color: #000;
+  	}
+  	.while {
+  		background-color: #fff;
+  	}
+</style>
+<body>
+
+
+<script>
+  window.onload = function () {
+
+    function makeBoard(rows, cols) {
+      var table = document.createElement('table');
+        for (var i = 0; i < rows; i++) {
+            var tr = document.createElement('tr');
+            table.appendChild(tr);
+          for (var j = 0; j < cols; j++) {
+            var td = document.createElement('td');
+            ((i % 2) && !(j % 2) || !(i % 2) && (j % 2)) ?
+              td.className = 'black' : td.className = 'white';
+            tr.appendChild(td);
+          }
+        }
+      return document.body.appendChild(table);
+    }
+
+    makeBoard(8, 8);
+  }
+</script>
+</body>
+</html>

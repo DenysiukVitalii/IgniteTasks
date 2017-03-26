@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task-1 | Homework-7</title>
+</head>
+<style>
+
+#div-1, #div-2, #div-3 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: .3s;
+
+}
+#div-1 {
+  background-color: red;
+}
+#div-2 {
+  background-color: yellow;
+}
+#div-3 {
+  background-color: green;
+}
+
+
+</style>
+<body>
+    <div id="div-1"></div>
+    <div id="div-2"></div>
+    <div id="div-3"></div>
+
+
+
+
+<script>
+  window.onload = function () {
+
+    var divElements = document.getElementsByTagName('div');
+    var clientWidth = document.documentElement.clientWidth;
+    var clientHeight = document.documentElement.clientHeight;
+
+    function moveDivElements(elements) {
+      for (var i = 0; i < elements.length; i++) {
+        elements[i].style.left = Math.random() * (clientWidth - elements[i].clientWidth) + 'px';
+        elements[i].style.top = Math.random() * (clientHeight - elements[i].clientHeight) + 'px';
+      }
+    }
+
+    setInterval(function() {
+      moveDivElements(divElements);
+    }, 1000);
+
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task-2 | Homework-7</title>
+</head>
+<style>
+* {
+  font-size: 20px;
+}
+div {
+  width: 60px;
+  height: 20px;
+  background-color: green;
+}
+</style>
+<body>
+    <a href="">anchor</a>
+    <div></div>
+
+<script>
+  window.onload = function () {
+    var anchor = document.getElementsByTagName('a')[0];
+    var div = document.getElementsByTagName('div')[0];
+
+    function positionAt(anchor, position, element) {
+      switch (position) {
+        case 'top': { anchor.insertAdjacentElement("beforeBegin", element); break;}
+        case 'bottom': {  anchor.insertAdjacentElement("afterEnd", element); break;}
+        case 'right': { element.style.display = 'inline-block'; anchor.style.verticalAlign = 'top'; break;}
+        default: break;
+      }
+    }
+
+    // positionAt(anchor, 'top', div);
+    // positionAt(anchor, 'bottom', div);
+    // positionAt(anchor, 'right', div);
+
+  }
+</script>
+</body>
+</html>
