@@ -1,0 +1,42 @@
+#calculator {
+  margin: 0 auto;
+  width: 300px;
+  padding: 20px;
+  border: 2px solid #000;
+}
+.inputs {
+  width: 100%;
+  margin: 0 auto;
+}
+#field-1, #field-2 {
+  width: 48%;
+  display: inline-block;
+}
+.operations {
+  width: 200px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.operations input{
+  font-size: 25px;
+  width: 30px;
+  height: 30px;
+  margin: 0 3px;
+}
+.text-center {
+text-align: center;
+}
+h2 {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 10px;
+}
+#result {
+  height: 20px;
+  width: 250px;
+  border: 1px solid #000;
+  margin: 10px auto;
+  padding: 5px;
+  text-align: center;
+}
