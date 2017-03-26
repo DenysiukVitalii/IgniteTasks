@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task 1 | Classwork-8</title>
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<button>Сменить цвет</button>
+<script>
+	  var btn = document.getElementsByTagName('button')[0];
+	  var divElements = document.querySelectorAll('div');
+	  var count = 5;
+	  btn.onclick = function() {
+     divElements[(count - 1) % divElements.length].className = 'green';
+     divElements[(count++) % divElements.length].className = 'red';
+	  }
+	</script>
+</body>
+</html>
