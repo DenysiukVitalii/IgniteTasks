@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task 3 | Classwork-9</title>
+</head>
+<body>
+<input id="input-text" type="text" name="">
+<script type="text/javascript">
+   var input = document.getElementById('input-text');
+   input.addEventListener('keypress', function(e) {
+     if (!/\d/.test(String.fromCharCode(e.charCode))) e.preventDefault();
+   });
+</script>
+</body>
+</html>
