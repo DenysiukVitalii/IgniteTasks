@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task 3 | Homework-9</title>
+  <style>
+    #rectangle {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      background-color: #9999ff;
+      transition: 0.6s;
+    }
+    input[type=text] {
+      margin: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <input id="input-1" type="text" placeholder="x = ">
+  <input id="input-2" type="text" placeholder="y = ">
+  <input id="btn" type="button" value="Переставить блок">
+  <div id="rectangle"></div>
+
+  <script>
+
+      var coordX = document.getElementById('input-1');
+      var coordY = document.getElementById('input-2');
+      var btn = document.getElementById('btn');
+      var rect = document.getElementById('rectangle');
+      var prevPositionRect = rect.getBoundingClientRect();
+
+      btn.addEventListener('click', function(e) {
+        var cx = +coordX.value;
+        var cy = +coordY.value;
+
+        if (!isNaN(cx) && !isNaN(cy) && (coordX.value != '' || coordX.value != '')) {
+          rect.style.top = cy + 'px';
+          rect.style.left = cx + 'px';
+        } else {
+          coordX.value = '';
+          coordY.value = '';
+          rect.style.top = prevPositionRect.top + 'px';
+          rect.style.left = prevPositionRect.left + 'px';
+          alert('Ошибка ввода! Введите координаты(число)!');
+          e.preventDefault();
+        }
+      });
+
+  </script>
+</body>
+</html>

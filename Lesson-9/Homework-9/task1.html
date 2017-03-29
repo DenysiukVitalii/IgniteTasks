@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task 1 | Homework-9</title>
+</head>
+<style>
+  * {
+    font-size: 20px;
+  }
+  ul {
+    width: 300px;
+  }
+  ul li {
+    list-style: none;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+  }
+  ul li:first-child {
+    border-top: 1px solid #ccc;
+  }
+  .choosed {
+    color: #fff;
+    background-color: #80ccff;
+  }
+
+</style>
+
+<body>
+  <ul id="list">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+    <li>Item 4</li>
+    <li>Item 5</li>
+  </ul>
+  <script>
+      var list = document.getElementById('list');
+      list.addEventListener('click', function(e) {
+        e.target.classList.toggle('choosed');
+      });
+  </script>
+</body>
+</html>
