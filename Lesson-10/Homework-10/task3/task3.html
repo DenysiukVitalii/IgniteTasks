@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 3 | Homework-10</title>
+</head>
+<body>
+    <form name="calc">
+        <input type="number" name="a">
+        <input type="number" name="b">
+        <input type="submit" value="Send">
+    </form>
+    <p id="output">Sum: </p>
+
+    <script type="text/javascript">
+        window.onload = function () {
+            var form = document.forms.calc;
+            form.onsubmit = function (e) {
+                e.preventDefault();
+                var formData = new FormData(form);
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "/CalcHandler.ashx");
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4) {
+                        if (xhr.status === 200) {
+                            document.getElementById('output').innerHTML += xhr.responseText;
+                        }
+                    }
+                }
+                xhr.send(formData);
+            }
+        }
+    </script>
+</body>
+</html>

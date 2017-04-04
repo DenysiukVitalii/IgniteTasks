@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 1 | Homework-10</title>
+    <script>
+        window.onload = function () {
+          var btnGetInfo = document.getElementById("btnGetInfo");
+          var output = document.getElementById("output");
+            btnGetInfo.onclick = function () {
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', 'page1.html');
+                var xhr2 = new XMLHttpRequest();
+                xhr2.open('GET', 'page2.html');
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4) {
+                        if (xhr.status == 200) {
+                            output.innerHTML += xhr.responseText;
+                        }
+                    }
+                };
+                xhr2.onreadystatechange = function () {
+                    if (xhr2.readyState == 4) {
+                        if (xhr2.status == 200) {
+                            output.innerHTML += xhr2.responseText;
+                        }
+                    }
+                };
+                xhr.send();
+                xhr2.send();
+            }
+        }
+    </script>
+
+</head>
+<body>
+<input id="btnGetInfo" type="button" value="Get Info"/>
+<p id="output"></p>
+</body>
+</html>
