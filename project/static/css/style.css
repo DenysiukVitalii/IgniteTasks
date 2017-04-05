@@ -387,4 +387,44 @@ header {
       animation-name: zoomOut;
       animation-duration: .4s; }
 
+#scroll-to-contact-us {
+  padding-bottom: 70px; }
+  #scroll-to-contact-us .scroll-to-contact {
+    display: block;
+    margin: 0 auto;
+    background-color: #ffe600;
+    height: 50px;
+    width: 50px;
+    text-decoration: none;
+    position: relative;
+    transform: rotate(180deg);
+    cursor: pointer; }
+    #scroll-to-contact-us .scroll-to-contact:hover {
+      color: #fff;
+      background-color: #fed615; }
+    #scroll-to-contact-us .scroll-to-contact img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+  #scroll-to-contact-us h2 {
+    margin-top: 40px;
+    font-family: OswaldBold; }
+  #scroll-to-contact-us p {
+    margin-bottom: 60px;
+    font-family: OswaldLight;
+    margin-top: 20px; }
+  #scroll-to-contact-us .to-contact-us {
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: pointer;
+    color: #fff;
+    background-color: #ffe600;
+    padding: 10px 40px;
+    text-decoration: none;
+    text-transform: uppercase; }
+    #scroll-to-contact-us .to-contact-us:hover {
+      color: #fff;
+      background-color: #fed615; }
+
 /*# sourceMappingURL=style.css.map */

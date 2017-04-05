@@ -507,3 +507,54 @@ header {
       }
   }
  }
+
+ #scroll-to-contact-us {
+   padding-bottom: 70px;
+   .scroll-to-contact {
+     display: block;
+     margin: 0 auto;
+     background-color: $yellow;
+     height: 50px;
+     width: 50px;
+     text-decoration: none;
+     position: relative;
+     transform: rotate(180deg);
+     cursor: pointer;
+     &:hover {
+       color: #fff;
+       background-color: #fed615;
+     }
+     img {
+       position: absolute;
+       top: 50%;
+       left: 50%;
+       transform: translate(-50%, -50%);
+     }
+   }
+
+   h2 {
+      margin-top: 40px;
+      font-family: OswaldBold;
+   }
+   p {
+     margin-bottom: 60px;
+     font-family: OswaldLight;
+     margin-top: 20px;
+   }
+
+   .to-contact-us {
+     user-select: none;
+     -webkit-user-select: none;
+     cursor: pointer;
+     color: #fff;
+     background-color: $yellow;
+     padding: 10px 40px;
+     text-decoration: none;
+     text-transform: uppercase;
+     &:hover {
+       color: #fff;
+       background-color: #fed615;
+     }
+   }
+
+ }
