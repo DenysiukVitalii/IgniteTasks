@@ -13,6 +13,28 @@
 .yellow {
   background-color: #ffe600; }
 
+.grey {
+  background-color: #393f49;
+  transition: 0.5s; }
+
+@keyframes zoomOut {
+  from {
+    opacity: 1; }
+  50% {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3); }
+  to {
+    opacity: 0; } }
+.zoomOut {
+  animation-name: zoomOut;
+  animation-fill-mode: forwards; }
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3); }
+  50% {
+    opacity: 1; } }
 * {
   font-family: OswaldRegular; }
 
@@ -25,6 +47,7 @@ header {
   position: fixed;
   top: 0;
   background-color: rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
   width: 100%;
   padding: 5px 0px 13px;
   z-index: 100; }
@@ -214,7 +237,8 @@ header {
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%); }
+      transform: translate(-50%, -50%);
+      cursor: pointer; }
   @media screen and (max-width: 768px) {
     #love-to-do .col-sm-1 {
       margin-bottom: 50px; } }
@@ -233,14 +257,134 @@ header {
     margin-bottom: 25px; }
   #how-we-do-it h2, #how-we-do-it h3 {
     text-transform: uppercase; }
-  #how-we-do-it img {
-    display: block;
-    margin: 0 auto; }
+  #how-we-do-it .circle {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    background-color: transparent;
+    border-radius: 50%; }
+    #how-we-do-it .circle img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      cursor: pointer; }
   #how-we-do-it .discription {
     margin-top: 20px;
     margin-bottom: 60px; }
   @media screen and (max-width: 768px) {
     #how-we-do-it .col-sm-1 {
       margin-bottom: 50px; } }
+
+#portfolio {
+  position: relative;
+  padding: 60px 0; }
+  #portfolio p, #portfolio h2, #portfolio h3, #portfolio h4 {
+    text-align: center; }
+  #portfolio p {
+    font-family: OswaldLight;
+    color: #707070; }
+  #portfolio h2, #portfolio h3, #portfolio h4 {
+    text-transform: uppercase; }
+  #portfolio .discription {
+    margin-bottom: 0; }
+  #portfolio .divider {
+    display: block;
+    margin: 20px auto; }
+  #portfolio .filter-items {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 50px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 50px; }
+    #portfolio .filter-items li {
+      list-style: none; }
+      #portfolio .filter-items li a {
+        text-transform: uppercase;
+        cursor: pointer;
+        color: #000;
+        text-decoration: none;
+        font-size: 16px;
+        transition: 0.3s; }
+        #portfolio .filter-items li a:hover {
+          color: #ffe600; }
+        @media screen and (max-width: 768px) {
+          #portfolio .filter-items li a {
+            padding: 0;
+            text-align: center; } }
+      #portfolio .filter-items li .active-filter {
+        color: #ffe600; }
+      @media screen and (min-width: 768px) {
+        #portfolio .filter-items li {
+          display: inline-block;
+          float: left; }
+          #portfolio .filter-items li:after {
+            content: '';
+            display: inline-block;
+            width: 5px;
+            height: 5px;
+            margin: 0 20px;
+            transform: translateY(-75%);
+            background-color: #ffe600; }
+          #portfolio .filter-items li:last-child:after {
+            content: '';
+            display: none; } }
+      @media screen and (max-width: 768px) {
+        #portfolio .filter-items li {
+          text-align: center; } }
+  #portfolio #works.row {
+    margin-left: 0;
+    margin-right: 0; }
+  #portfolio #works {
+    margin-top: 120px;
+    width: 100%; }
+    @media screen and (max-width: 768px) {
+      #portfolio #works {
+        margin-top: 210px; } }
+    #portfolio #works .work {
+      padding: 0;
+      position: relative;
+      transition: 1s; }
+      #portfolio #works .work img {
+        width: 100%;
+        height: auto;
+        vertical-align: middle; }
+      #portfolio #works .work .work-description {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 230, 0, 0.5);
+        animation-fill-mode: forwards;
+        animation-name: zoomOut;
+        animation-duration: 0s; }
+        #portfolio #works .work .work-description .wrapper {
+          width: 80%;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          text-align: center; }
+          #portfolio #works .work .work-description .wrapper p, #portfolio #works .work .work-description .wrapper h3 {
+            font-family: OswaldRegular;
+            text-transform: uppercase;
+            color: #fff; }
+    #portfolio #works .mouse-enter {
+      user-select: none;
+      -webkit-user-select: none;
+      cursor: pointer; }
+      #portfolio #works .mouse-enter .work-description {
+        animation-name: zoomIn;
+        animation-duration: .4s; }
+        #portfolio #works .mouse-enter .work-description .work-title {
+          animation-name: zoomIn;
+          animation-duration: .4s; }
+    #portfolio #works .mouse-leave .work-description {
+      animation-name: zoomOut;
+      animation-duration: .4s; }
 
 /*# sourceMappingURL=style.css.map */

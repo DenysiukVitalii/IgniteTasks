@@ -24,7 +24,41 @@ $darkblue: #131A1D;
 .yellow {
   background-color: $yellow;
 }
+.grey {
+  background-color: #393f49;
+  transition: 0.5s;
+}
 
+@keyframes zoomOut {
+  from {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+    transform: scale3d(.3, .3, .3);
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.zoomOut {
+  animation-name: zoomOut;
+  animation-fill-mode: forwards;
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(.3, .3, .3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
 
 * {
   font-family: OswaldRegular;
@@ -40,6 +74,7 @@ header {
   position: fixed;
   top: 0;
   background-color: $grey;
+  transition: 0.5s;
   width: 100%;
   padding: 5px 0px 13px;
   z-index: 100;
@@ -273,6 +308,7 @@ header {
        top: 50%;
        left: 50%;
        transform: translate(-50%, -50%);
+       cursor: pointer;
      }
    }
    @media screen and (max-width: 768px) {
@@ -284,7 +320,7 @@ header {
 
  #how-we-do-it {
    background-color: $darkblue;
-  padding: 60px 0;
+   padding: 60px 0;
    h2 {
      color: $yellow;
    }
@@ -301,9 +337,20 @@ header {
     h2, h3{
       text-transform: uppercase;
     }
-    img {
-      display: block;
+    .circle {
+      position: relative;
+      width: 100px;
+      height: 100px;
       margin: 0 auto;
+      background-color: transparent;
+      border-radius: 50%;
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+      }
     }
     .discription {
       margin-top: 20px;
@@ -314,4 +361,149 @@ header {
         margin-bottom: 50px;
       }
     }
+ }
+
+ #portfolio {
+   position: relative;
+   padding: 60px 0;
+   p, h2, h3, h4 {
+     text-align: center;
+   }
+   p {
+     font-family: OswaldLight;
+     color: rgb(112,112,112);
+   }
+   h2, h3, h4 {
+     text-transform: uppercase;
+   }
+   .discription {
+     margin-bottom: 0;
+   }
+   .divider {
+     display: block;
+     margin: 20px auto;
+   }
+
+   .filter-items {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 50px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 50px;
+
+    li {
+      list-style: none;
+
+      a {
+          text-transform: uppercase;
+          cursor: pointer;
+          color: #000;
+          text-decoration: none;
+          font-size: 16px;
+          transition: 0.3s;
+          &:hover {
+            color: $yellow;
+          }
+          @media screen and (max-width: 768px) {
+           padding: 0;
+           text-align: center;
+          }
+        }
+        .active-filter {
+           color: $yellow;
+        }
+      @media screen and (min-width: 768px) {
+        display: inline-block;
+        float: left;
+        &:after {
+          content: '';
+          display: inline-block;
+          width: 5px;
+          height: 5px;
+          margin: 0 20px;
+          transform: translateY(-75%);
+          background-color: $yellow;
+        }
+        &:last-child:after {
+          content: '';
+          display: none;
+        }
+      }
+      @media screen and (max-width: 768px) {
+       text-align: center;
+      }
+
+    }
+  }
+  #works.row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  #works {
+    margin-top: 120px;
+    width: 100%;
+    @media screen and (max-width: 768px) {
+       margin-top: 210px;
+    }
+
+    .work {
+        padding: 0;
+        position: relative;
+        transition: 1s;
+        img {
+          width: 100%;
+          height: auto;
+          vertical-align: middle;
+        }
+        .work-description {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(255, 230, 0, .50);
+          animation-fill-mode: forwards;
+          animation-name: zoomOut;
+          animation-duration: 0s;
+          .wrapper {
+            width: 80%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            p,h3 {
+              font-family: OswaldRegular;
+              text-transform: uppercase;
+              color:#fff;
+            }
+          }
+        }
+      }
+
+      .mouse-enter {
+        user-select: none;
+        -webkit-user-select: none;
+        cursor: pointer;
+        .work-description {
+          animation-name: zoomIn;
+          animation-duration: .4s;
+
+          .work-title {
+            animation-name: zoomIn;
+            animation-duration: .4s;
+
+          }
+        }
+      }
+
+      .mouse-leave {
+        .work-description {
+          animation-name: zoomOut;
+          animation-duration: .4s;
+        }
+      }
+  }
  }
