@@ -1,0 +1,317 @@
+@font-face {
+  font-family: OswaldBold;
+  src: url(../fonts/Oswald-Bold.ttf);
+}
+
+@font-face {
+  font-family: OswaldMedium;
+  src: url(../fonts/Oswald-Medium.ttf);
+}
+
+@font-face {
+  font-family: OswaldRegular;
+  src: url(../fonts/Oswald-Regular.ttf);
+}
+
+@font-face {
+  font-family: OswaldLight;
+  src: url(../fonts/Oswald-light.ttf);
+}
+
+$yellow: #ffe600;
+$grey: rgba(0,0,0,0.2);
+$darkblue: #131A1D;
+.yellow {
+  background-color: $yellow;
+}
+
+
+* {
+  font-family: OswaldRegular;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
+/*     --- HEADER ---     */
+header {
+  position: fixed;
+  top: 0;
+  background-color: $grey;
+  width: 100%;
+  padding: 5px 0px 13px;
+  z-index: 100;
+}
+
+#menu {
+    @media screen and (min-width: 768px) {
+      float: right;
+      transform: translateY(80%);
+      //padding: 20px 0;
+    }
+}
+
+#icon-menu {
+ margin: 0;
+ padding: 0;
+ color: $yellow;
+ @media screen and (min-width: 768px) {
+   display: none;
+ }
+ display: block;
+ position: absolute;
+ top: 50%;
+ right: 5%;
+ font-size: 25px;
+ transform: translateY(-50%);
+ -webkit-transform: translateY(-50%);
+ -ms-transform: translateY(-50%);
+ -moz-transform: translateY(-50%);
+}
+
+.show-menu {
+  left: -5% !important;
+}
+ #menu-list {
+   margin: 0;
+   padding: 0;
+   float: right;
+   @media screen and (max-width: 768px) {
+      text-align: center;
+      display: block;
+      position: absolute;
+      width: 112%;
+      left: 112%;
+      transition: 0.4s;
+   }
+  #logo {
+    float: left;
+  }
+
+   li {
+     list-style: none;
+
+     a {
+         text-transform: uppercase;
+         cursor: pointer;
+         color: #fff;
+         text-decoration: none;
+         font-size: 16px;
+         &:hover {
+           color: $yellow;
+         }
+         @media screen and (max-width: 768px) {
+          padding: 10px 150px;
+         }
+       }
+     @media screen and (min-width: 768px) {
+       display: inline-block;
+       float: left;
+       &:after {
+         content: '';
+         display: inline-block;
+         width: 5px;
+         height: 5px;
+         margin: 0 20px;
+         transform: translateY(-75%);
+         background-color: $yellow;
+       }
+       &:last-child:after {
+         content: '';
+         display: none;
+       }
+     }
+     @media screen and (max-width: 768px) {
+        padding: 10px 0;
+        border-bottom: 1px solid #fff;
+        background-color: #ccc;
+     }
+   }
+ }
+
+ /*     ------     */
+
+/*  --- MAIN SLIDER ---  */
+#slider-section {
+  z-index: -100;
+  .slider {
+    width: 100%;
+    overflow-x: hidden;
+   }
+
+   .slider-wrapper {
+      user-select: none;
+      -webkit-user-select: none;
+     	width: 9999px;
+     .slide {
+        display: inline-block;
+        position: relative;
+        float: left;
+        width: 100vw;
+        height: 100vh;
+        background-size: cover;
+        background-position: center center;
+     }
+
+     .slide-content {
+        height: 40%;
+        background-color: rgba(0, 0, 0, 0.3);
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        transform: translateY(-50%);
+        .slide-text {
+          width: 50%;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%,-50%);
+          h1 {
+            text-transform: uppercase;
+            font-size: 4em;
+            color: #fff;
+            @media screen and (max-width: 1200px) {
+              font-size: 3em;
+            }
+            @media screen and (max-width: 768px) {
+              font-size: 2em;
+              margin-top: 20px;
+            }
+            @media screen and (max-width: 320px) {
+              font-size: 2em;
+              margin-top: 20px;
+            }
+          }
+        }
+     }
+  }
+
+  #slide-1 {
+    background-image: url(../img/bg.jpg);
+  }
+
+  #slide-2 {
+    background-image: url(../img/bg2.jpg);
+  }
+
+  #slide-3 {
+    background-image: url(../img/bg3.jpg);
+  }
+
+  .slider-nav {
+     width: 70%;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     .btn-slide {
+       display: inline-block;
+       width: 20px;
+       height: 20px;
+       cursor: pointer;
+     }
+     .btn-previous {
+       background: url(../img/arrow-left.png) no-repeat;
+     }
+     .btn-next {
+       float: right;
+       background: url(../img/arrow-right.png) no-repeat;
+     }
+  }
+}
+
+.mybtn {
+  display: block;
+  color: #000;
+  text-transform: uppercase;
+  cursor: pointer;
+  width: 234px;
+  margin: 30px auto;
+  padding: 10px 0;
+  font-size: 20px;
+  border: none;
+  &:hover {
+    background-color: #fed615;
+  }
+  @media screen and (max-width: 768px) {
+    width: 150px;
+  }
+}
+
+ /*     ------     */
+
+ #love-to-do {
+   padding: 60px 0;
+   p, h2, h3, h4 {
+     text-align: center;
+   }
+   p {
+     font-family: OswaldLight;
+     color: rgb(112,112,112);
+   }
+   h2, h3, h4 {
+     text-transform: uppercase;
+   }
+   .discription {
+     margin-bottom: 60px;
+   }
+   .divider {
+     display: block;
+     margin: 20px auto;
+   }
+   .circle {
+     position: relative;
+     width: 100px;
+     height: 100px;
+     margin: 0 auto;
+     background-color: $yellow;
+     border-radius: 50%;
+     img {
+       position: absolute;
+       top: 50%;
+       left: 50%;
+       transform: translate(-50%, -50%);
+     }
+   }
+   @media screen and (max-width: 768px) {
+     .col-sm-1 {
+       margin-bottom: 50px;
+     }
+   }
+ }
+
+ #how-we-do-it {
+   background-color: $darkblue;
+  padding: 60px 0;
+   h2 {
+     color: $yellow;
+   }
+   p {
+     font-family: OswaldLight;
+   }
+    p, h2, h3{
+      text-align: center;
+      color:#fff;
+    }
+    h3 {
+      margin-bottom: 25px;
+    }
+    h2, h3{
+      text-transform: uppercase;
+    }
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+    .discription {
+      margin-top: 20px;
+      margin-bottom: 60px;
+    }
+    @media screen and (max-width: 768px) {
+      .col-sm-1 {
+        margin-bottom: 50px;
+      }
+    }
+ }
