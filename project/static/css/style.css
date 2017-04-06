@@ -215,7 +215,8 @@ header {
 #love-to-do {
   padding: 60px 0; }
   #love-to-do h2 {
-    margin-top: 0; }
+    margin-top: 0;
+    font-family: OswaldBold; }
   #love-to-do p, #love-to-do h2, #love-to-do h3, #love-to-do h4 {
     text-align: center; }
   #love-to-do p {
@@ -253,7 +254,8 @@ header {
   #how-we-do-it h2 {
     color: #ffe600;
     text-align: center;
-    margin-top: 0; }
+    margin-top: 0;
+    font-family: OswaldBold; }
   #how-we-do-it p {
     font-family: OswaldLight;
     font-size: 16px; }
@@ -289,6 +291,8 @@ header {
   padding: 60px 0; }
   #portfolio p, #portfolio h2, #portfolio h3, #portfolio h4 {
     text-align: center; }
+  #portfolio h2 {
+    font-family: OswaldBold; }
   #portfolio p {
     font-family: OswaldLight;
     color: #707070;
@@ -442,7 +446,8 @@ header {
   #proud-numbers h2 {
     margin-top: 0;
     text-transform: uppercase;
-    color: #fff; }
+    color: #fff;
+    font-family: OswaldBold; }
   #proud-numbers p {
     margin-bottom: 60px;
     margin-top: 20px;
@@ -470,11 +475,15 @@ header {
     padding-top: 20px;
     font-size: 35px;
     color: #fff; }
+  #proud-numbers .counter div {
+    font-family: OswaldBold; }
 
 #about-us {
   padding-top: 60px; }
   #about-us p, #about-us h2, #about-us h3, #about-us h4 {
     text-align: center; }
+  #about-us h2 {
+    font-family: OswaldBold; }
   #about-us p {
     font-family: OswaldLight;
     color: #707070;
@@ -492,15 +501,154 @@ header {
     height: 75px;
     width: 75px;
     transform: translateY(12%); }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 992px) {
       #about-us .circle {
         margin-bottom: 30px; } }
   #about-us .about-item {
     margin-left: 10px; }
     #about-us .about-item h4, #about-us .about-item p {
       text-align: left; }
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 992px) {
         #about-us .about-item h4, #about-us .about-item p {
           text-align: center; } }
+
+#team h2 {
+  margin-top: 40px;
+  font-family: OswaldBold;
+  text-transform: uppercase; }
+#team p {
+  margin-bottom: 60px;
+  font-family: OswaldLight;
+  margin-top: 20px;
+  font-size: 16px; }
+#team img {
+  margin: 0 auto; }
+@media screen and (max-width: 992px) {
+  #team .worker {
+    margin-bottom: 40px; } }
+#team .worker-info {
+  text-align: center;
+  border-bottom: 2px solid #ccc; }
+  #team .worker-info h4 {
+    text-transform: uppercase; }
+  #team .worker-info .worker-name {
+    color: #ffe600; }
+#team #worker-cards {
+  margin-top: 50px;
+  padding-top: 65px;
+  background-color: #131316;
+  color: #fff; }
+  @media screen and (min-width: 768px) {
+    #team #worker-cards .worker-description .container {
+      width: 780px; } }
+  #team #worker-cards .name {
+    position: relative; }
+    #team #worker-cards .name h4 {
+      color: #ffe600;
+      text-transform: uppercase; }
+    #team #worker-cards .name img {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      cursor: pointer; }
+  #team #worker-cards img {
+    float: right; }
+  #team #worker-cards p {
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 16px; }
+  #team #worker-cards .social-icon {
+    margin-right: 20px;
+    position: relative;
+    display: inline-block;
+    width: 37px;
+    height: 37px;
+    border: 2px solid #fff;
+    cursor: pointer;
+    transition: .3s; }
+    #team #worker-cards .social-icon:hover {
+      background-color: #ffe600;
+      border: 2px solid #ffe600; }
+    #team #worker-cards .social-icon:hover i {
+      color: #131A1D; }
+    #team #worker-cards .social-icon i {
+      color: #fff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+  #team #worker-cards .worker-card {
+    position: relative; }
+    @media screen and (min-width: 768px) {
+      #team #worker-cards .worker-card:before {
+        content: '';
+        position: absolute;
+        left: 15%;
+        top: -112px;
+        border: 30px solid transparent;
+        border-bottom: 20px solid #131316; } }
+    @media screen and (max-width: 768px) {
+      #team #worker-cards .worker-card:before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -112px;
+        border: 30px solid transparent;
+        border-bottom: 20px solid #131316; } }
+#team #skills {
+  margin-top: 40px;
+  padding-top: 60px;
+  padding-bottom: 80px;
+  background-color: #131A1D;
+  color: #fff; }
+  #team #skills .skill {
+    position: relative;
+    height: 200px; }
+    @media screen and (max-width: 992px) {
+      #team #skills .skill {
+        margin-bottom: 30px; } }
+  #team #skills h2 {
+    margin-top: 0;
+    font-family: OswaldBold;
+    text-transform: uppercase; }
+  #team #skills p {
+    margin-bottom: 60px;
+    font-family: OswaldLight;
+    margin-top: 20px;
+    font-size: 16px;
+    text-align: center; }
+  #team #skills .tech {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ffe600;
+    font-size: 20px; }
+  #team #skills .circle-diagram {
+    display: block;
+    float: left;
+    position: relative;
+    margin: 0 auto;
+    width: 100%; }
+  #team #skills circle {
+    fill: transparent;
+    stroke: #fff;
+    stroke-width: 5;
+    stroke-dasharray: 408px 408px;
+    margin: 0 auto; }
+  #team #skills circle:nth-child(2n) {
+    fill: transparent;
+    stroke: #ffe600;
+    stroke-width: 5; }
+  #team #skills .percents {
+    font-size: 35px;
+    font-family: OswaldLight;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #ffe600;
+    transform: translate(-50%, -50%); }
 
 /*# sourceMappingURL=style.css.map */
