@@ -1,4 +1,5 @@
 var menuLinks = document.getElementsByClassName('menu-link');
+var header = document.getElementsByTagName('header')[0];
 var collectionOffsetTop = {};
 var selector;
 var element;
@@ -33,7 +34,7 @@ function toggleScroll(target, scrolled) {
       speed = speed > step ? speed - step : speed;
     }
     var positionY = scrolled < target ? target - distance : target + distance;
-    window.scrollTo(0, positionY);
+    window.scrollTo(0, positionY - header.offsetHeight);
     if (distance <= 0) {
       clearInterval(scrollInterval);
     }

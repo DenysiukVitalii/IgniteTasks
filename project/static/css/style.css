@@ -229,22 +229,23 @@ header {
   #love-to-do .divider {
     display: block;
     margin: 20px auto; }
-  #love-to-do .circle {
-    position: relative;
-    width: 100px;
-    height: 100px;
-    margin: 0 auto;
-    background-color: #ffe600;
-    border-radius: 50%; }
-    #love-to-do .circle img {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      cursor: pointer; }
   @media screen and (max-width: 768px) {
-    #love-to-do .col-sm-1 {
+    #love-to-do .col-sm-3 {
       margin-bottom: 50px; } }
+
+.circle {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  background-color: #ffe600;
+  border-radius: 50%; }
+  .circle img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer; }
 
 #how-we-do-it {
   background-color: #131A1D;
@@ -469,5 +470,37 @@ header {
     padding-top: 20px;
     font-size: 35px;
     color: #fff; }
+
+#about-us {
+  padding-top: 60px; }
+  #about-us p, #about-us h2, #about-us h3, #about-us h4 {
+    text-align: center; }
+  #about-us p {
+    font-family: OswaldLight;
+    color: #707070;
+    font-size: 16px; }
+  #about-us h2, #about-us h3, #about-us h4 {
+    text-transform: uppercase; }
+  #about-us .discription {
+    margin-bottom: 70px; }
+  #about-us .divider {
+    display: block;
+    margin: 20px auto; }
+  #about-us .row {
+    margin-bottom: 40px; }
+  #about-us .circle {
+    height: 75px;
+    width: 75px;
+    transform: translateY(12%); }
+    @media screen and (max-width: 768px) {
+      #about-us .circle {
+        margin-bottom: 30px; } }
+  #about-us .about-item {
+    margin-left: 10px; }
+    #about-us .about-item h4, #about-us .about-item p {
+      text-align: left; }
+      @media screen and (max-width: 768px) {
+        #about-us .about-item h4, #about-us .about-item p {
+          text-align: center; } }
 
 /*# sourceMappingURL=style.css.map */
