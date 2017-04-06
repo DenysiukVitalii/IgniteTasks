@@ -214,11 +214,14 @@ header {
 /*     ------     */
 #love-to-do {
   padding: 60px 0; }
+  #love-to-do h2 {
+    margin-top: 0; }
   #love-to-do p, #love-to-do h2, #love-to-do h3, #love-to-do h4 {
     text-align: center; }
   #love-to-do p {
     font-family: OswaldLight;
-    color: #707070; }
+    color: #707070;
+    font-size: 16px; }
   #love-to-do h2, #love-to-do h3, #love-to-do h4 {
     text-transform: uppercase; }
   #love-to-do .discription {
@@ -247,10 +250,13 @@ header {
   background-color: #131A1D;
   padding: 60px 0; }
   #how-we-do-it h2 {
-    color: #ffe600; }
+    color: #ffe600;
+    text-align: center;
+    margin-top: 0; }
   #how-we-do-it p {
-    font-family: OswaldLight; }
-  #how-we-do-it p, #how-we-do-it h2, #how-we-do-it h3 {
+    font-family: OswaldLight;
+    font-size: 16px; }
+  #how-we-do-it p, #how-we-do-it h3 {
     text-align: center;
     color: #fff; }
   #how-we-do-it h3 {
@@ -284,7 +290,8 @@ header {
     text-align: center; }
   #portfolio p {
     font-family: OswaldLight;
-    color: #707070; }
+    color: #707070;
+    font-size: 16px; }
   #portfolio h2, #portfolio h3, #portfolio h4 {
     text-transform: uppercase; }
   #portfolio .discription {
@@ -413,7 +420,8 @@ header {
   #scroll-to-contact-us p {
     margin-bottom: 60px;
     font-family: OswaldLight;
-    margin-top: 20px; }
+    margin-top: 20px;
+    font-size: 16px; }
   #scroll-to-contact-us .to-contact-us {
     user-select: none;
     -webkit-user-select: none;
@@ -426,5 +434,40 @@ header {
     #scroll-to-contact-us .to-contact-us:hover {
       color: #fff;
       background-color: #fed615; }
+
+#proud-numbers {
+  background-color: #131A1D;
+  padding: 60px 0; }
+  #proud-numbers h2 {
+    margin-top: 0;
+    text-transform: uppercase;
+    color: #fff; }
+  #proud-numbers p {
+    margin-bottom: 60px;
+    margin-top: 20px;
+    font-size: 16px;
+    font-family: OswaldLight;
+    color: #fff; }
+  #proud-numbers .achievements {
+    position: relative;
+    width: 100%;
+    height: 135px;
+    border: 1px solid #ffe600; }
+    #proud-numbers .achievements span {
+      width: 150px;
+      color: #ffe600;
+      text-transform: uppercase;
+      position: absolute;
+      top: 65%;
+      font-size: 16px;
+      transform: translate(-50%, -50%); }
+    @media screen and (max-width: 992px) {
+      #proud-numbers .achievements {
+        margin-bottom: 30px; } }
+  #proud-numbers .counter {
+    font-family: OswaldBold;
+    padding-top: 20px;
+    font-size: 35px;
+    color: #fff; }
 
 /*# sourceMappingURL=style.css.map */

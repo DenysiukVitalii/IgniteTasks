@@ -63,6 +63,8 @@ $darkblue: #131A1D;
 * {
   font-family: OswaldRegular;
 }
+
+
 body {
   margin: 0;
   padding: 0;
@@ -279,12 +281,16 @@ header {
 
  #love-to-do {
    padding: 60px 0;
+   h2 {
+     margin-top: 0;
+   }
    p, h2, h3, h4 {
      text-align: center;
    }
    p {
      font-family: OswaldLight;
      color: rgb(112,112,112);
+     font-size: 16px;
    }
    h2, h3, h4 {
      text-transform: uppercase;
@@ -323,11 +329,14 @@ header {
    padding: 60px 0;
    h2 {
      color: $yellow;
+     text-align: center;
+     margin-top: 0;
    }
    p {
      font-family: OswaldLight;
+     font-size: 16px;
    }
-    p, h2, h3{
+    p, h3{
       text-align: center;
       color:#fff;
     }
@@ -372,6 +381,7 @@ header {
    p {
      font-family: OswaldLight;
      color: rgb(112,112,112);
+     font-size: 16px;
    }
    h2, h3, h4 {
      text-transform: uppercase;
@@ -540,6 +550,7 @@ header {
      margin-bottom: 60px;
      font-family: OswaldLight;
      margin-top: 20px;
+     font-size: 16px;
    }
 
    .to-contact-us {
@@ -557,4 +568,45 @@ header {
      }
    }
 
+ }
+
+ #proud-numbers {
+   background-color: $darkblue;
+   padding: 60px 0;
+   h2 {
+     margin-top: 0;
+     text-transform: uppercase;
+     color: #fff;
+   }
+   p {
+     margin-bottom: 60px;
+     margin-top: 20px;
+     font-size: 16px;
+     font-family: OswaldLight;
+     color: #fff;
+   }
+  .achievements {
+    position: relative;
+    width: 100%;
+    height: 135px;
+    border: 1px solid $yellow;
+     span {
+       width: 150px;
+       color: $yellow;
+       text-transform: uppercase;
+       position: absolute;
+       top: 65%;
+       font-size: 16px;
+       transform: translate(-50%, -50%);
+     }
+     @media screen and (max-width: 992px) {
+       margin-bottom: 30px;
+     }
+   }
+   .counter {
+    font-family: OswaldBold;
+    padding-top: 20px;
+   	font-size: 35px;
+    color:#fff;
+   }
  }
