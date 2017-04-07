@@ -103,7 +103,8 @@ header {
         color: #ffe600; }
       @media screen and (max-width: 768px) {
         #menu-list li a {
-          padding: 10px 150px; } }
+          padding: 10px 150px;
+          color: #ffe600; } }
     @media screen and (min-width: 768px) {
       #menu-list li {
         display: inline-block;
@@ -123,7 +124,7 @@ header {
       #menu-list li {
         padding: 10px 0;
         border-bottom: 1px solid #fff;
-        background-color: #ccc; } }
+        background-color: #393f49; } }
 
 /*     ------     */
 /*  --- MAIN SLIDER ---  */
@@ -204,9 +205,10 @@ header {
   margin: 30px auto;
   padding: 10px 0;
   font-size: 20px;
-  border: none; }
+  border: none;
+  transition: .2s; }
   .mybtn:hover {
-    background-color: #fed615; }
+    background-color: #d8c61e; }
   @media screen and (max-width: 768px) {
     .mybtn {
       width: 150px; } }
@@ -409,11 +411,12 @@ header {
     width: 50px;
     text-decoration: none;
     position: relative;
+    transition: .2s;
     transform: rotate(180deg);
     cursor: pointer; }
     #scroll-to-contact-us .scroll-to-contact:hover {
       color: #fff;
-      background-color: #fed615; }
+      background-color: #d8c61e; }
     #scroll-to-contact-us .scroll-to-contact img {
       position: absolute;
       top: 50%;
@@ -435,10 +438,11 @@ header {
     background-color: #ffe600;
     padding: 10px 40px;
     text-decoration: none;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    transition: .2s; }
     #scroll-to-contact-us .to-contact-us:hover {
       color: #fff;
-      background-color: #fed615; }
+      background-color: #d8c61e; }
 
 #proud-numbers {
   background-color: #131A1D;
@@ -544,7 +548,8 @@ header {
   text-align: center;
   border-bottom: 2px solid #ccc; }
   #team .worker-info h4 {
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    color: #707070; }
   #team .worker-info .worker-name {
     color: #ffe600; }
 #team #worker-cards {
@@ -666,6 +671,9 @@ header {
   #contact-us h3 {
     margin-top: 10px;
     margin-bottom: 27px; }
+  @media screen and (max-width: 992px) {
+    #contact-us .col-md-4 {
+      margin-bottom: 30px; } }
   #contact-us .divider {
     display: block;
     margin: 20px auto; }
@@ -685,5 +693,125 @@ header {
     font-size: 20px;
     color: #515151;
     margin: 0; }
+
+#send-message {
+  background-color: #131A1D;
+  color: #fff;
+  padding: 60px 0; }
+  #send-message h2 {
+    margin: 0;
+    font-family: OswaldBold;
+    text-transform: uppercase; }
+  #send-message p {
+    margin-bottom: 60px;
+    font-family: OswaldLight;
+    margin-top: 20px;
+    font-size: 16px; }
+  #send-message input {
+    display: block;
+    width: 100%;
+    padding: 15px 15px;
+    border: 1px solid #fff;
+    background-color: transparent; }
+    #send-message input:focus {
+      outline: #ffe600 auto 5px; }
+    @media screen and (max-width: 992px) {
+      #send-message input {
+        margin-bottom: 20px; } }
+  #send-message input::-webkit-input-placeholder {
+    color: #ccc; }
+  #send-message input::-moz-placeholder {
+    color: #ccc; }
+  #send-message input::-ms-placeholder {
+    color: #ccc; }
+  #send-message textarea {
+    resize: none;
+    display: block;
+    width: 100%;
+    height: 220px;
+    margin: 28px 0;
+    background-color: transparent;
+    padding: 15px;
+    color: #fff;
+    border: 1px solid #fff; }
+    #send-message textarea:focus {
+      outline: #ffe600 auto 5px; }
+    @media screen and (max-width: 992px) {
+      #send-message textarea {
+        margin-top: 0; } }
+  #send-message textarea::-webkit-input-placeholder {
+    color: #ccc; }
+  #send-message textarea::-moz-placeholder {
+    color: #ccc; }
+  #send-message textarea::-ms-placeholder {
+    color: #ccc; }
+  #send-message button {
+    padding: 15px 50px;
+    font-size: 15px;
+    background-color: #ffe600;
+    border: none;
+    color: #fff;
+    color: #131A1D;
+    font-family: OswaldBold;
+    text-transform: uppercase;
+    outline: none !important;
+    transition: .2s; }
+    #send-message button:hover {
+      background-color: #d8c61e; }
+
+footer {
+  background-color: #131316;
+  color: #fff; }
+  footer p {
+    margin-top: 20px;
+    margin-bottom: 0;
+    font-family: OswaldLight; }
+  footer p a {
+    color: #ffe600;
+    cursor: pointer;
+    text-decoration: none !important; }
+    footer p a:hover {
+      color: #fff; }
+  footer ul {
+    display: block;
+    width: 124px;
+    height: 20px;
+    margin: 25px auto;
+    padding: 0; }
+    footer ul li {
+      list-style: none;
+      display: inline-block;
+      float: left;
+      margin: 0 8px; }
+      footer ul li a {
+        color: #fff;
+        cursor: pointer;
+        font-size: 16px; }
+      footer ul li:nth-child(1):hover a {
+        color: #3B5998; }
+      footer ul li:nth-child(2):hover a {
+        color: #aaa; }
+      footer ul li:nth-child(3):hover a {
+        color: #1DA1F2; }
+      footer ul li:nth-child(4):hover a {
+        color: #DB4437; }
+  footer .scroll-to-home {
+    display: block;
+    margin: 0 auto;
+    background-color: #ffe600;
+    height: 50px;
+    width: 50px;
+    text-decoration: none;
+    position: relative;
+    cursor: pointer;
+    transition: .2s; }
+    footer .scroll-to-home:hover {
+      color: #fff;
+      background-color: #d8c61e; }
+    footer .scroll-to-home img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
 
 /*# sourceMappingURL=style.css.map */

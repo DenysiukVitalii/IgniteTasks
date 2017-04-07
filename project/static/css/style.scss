@@ -142,6 +142,7 @@ header {
          }
          @media screen and (max-width: 768px) {
           padding: 10px 150px;
+          color: $yellow;
          }
        }
      @media screen and (min-width: 768px) {
@@ -164,7 +165,7 @@ header {
      @media screen and (max-width: 768px) {
         padding: 10px 0;
         border-bottom: 1px solid #fff;
-        background-color: #ccc;
+        background-color: #393f49;
      }
    }
  }
@@ -270,8 +271,9 @@ header {
   padding: 10px 0;
   font-size: 20px;
   border: none;
+  transition: .2s;
   &:hover {
-    background-color: #fed615;
+    background-color: #d8c61e;
   }
   @media screen and (max-width: 768px) {
     width: 150px;
@@ -535,11 +537,12 @@ header {
      width: 50px;
      text-decoration: none;
      position: relative;
+     transition: .2s;
      transform: rotate(180deg);
      cursor: pointer;
      &:hover {
        color: #fff;
-       background-color: #fed615;
+       background-color: #d8c61e;
      }
      img {
        position: absolute;
@@ -569,9 +572,10 @@ header {
      padding: 10px 40px;
      text-decoration: none;
      text-transform: uppercase;
+     transition: .2s;
      &:hover {
        color: #fff;
-       background-color: #fed615;
+       background-color: #d8c61e;
      }
    }
 
@@ -709,6 +713,7 @@ header {
      border-bottom: 2px solid #ccc;
      h4 {
        text-transform: uppercase;
+       color: rgb( 112, 112, 112 );
      }
      .worker-name {
        color: $yellow;
@@ -866,6 +871,11 @@ header {
      margin-top: 10px;
      margin-bottom: 27px;
    }
+   @media screen and (max-width: 992px) {
+     .col-md-4 {
+       margin-bottom: 30px;
+     }
+   }
    .divider {
      display: block;
      margin: 20px auto;
@@ -888,5 +898,140 @@ header {
       font-size: 20px;
       color: rgb( 81, 81, 81 );
       margin: 0;
+   }
+ }
+
+ #send-message {
+   background-color: $darkblue;
+   color: #fff;
+   padding: 60px 0;
+   h2 {
+      margin: 0;
+      font-family: OswaldBold;
+      text-transform: uppercase;
+   }
+   p {
+     margin-bottom: 60px;
+     font-family: OswaldLight;
+     margin-top: 20px;
+     font-size: 16px;
+   }
+   input {
+     display: block;
+     width: 100%;
+     padding: 15px 15px;
+     border: 1px solid #fff;
+     background-color: transparent;
+     &:focus {
+      outline: $yellow auto 5px;
+    }
+    @media screen and (max-width: 992px) {
+        margin-bottom: 20px;
+    }
+   }
+
+   input::-webkit-input-placeholder {color: #ccc;}
+   input::-moz-placeholder {color: #ccc;}
+   input::-ms-placeholder {color: #ccc;}
+
+   textarea {
+     resize: none;
+     display: block;
+     width: 100%;
+     height: 220px;
+     margin: 28px 0;
+     background-color: transparent;
+     padding: 15px;
+     color:#fff;
+     border: 1px solid #fff;
+     &:focus {
+      outline: $yellow auto 5px;
+     }
+     @media screen and (max-width: 992px) {
+         margin-top: 0;
+     }
+   }
+
+   textarea::-webkit-input-placeholder {color: #ccc;}
+   textarea::-moz-placeholder {color: #ccc;}
+   textarea::-ms-placeholder {color: #ccc;}
+
+   button {
+     padding: 15px 50px;
+     font-size: 15px;
+     background-color: $yellow;
+     border: none;
+     color:#fff;
+     color: $darkblue;
+     font-family: OswaldBold;
+     text-transform: uppercase;
+     outline: none !important;
+     transition: .2s;
+     &:hover {
+      background-color: #d8c61e;
+     }
+   }
+ }
+
+ footer {
+   background-color: $dark;
+   color: #fff;
+   p {
+     margin-top: 20px;
+     margin-bottom: 0;
+     font-family: OswaldLight;
+   }
+   p a {
+     color: $yellow;
+     cursor: pointer;
+     text-decoration: none !important;
+     &:hover {
+       color: #fff;
+     }
+   }
+
+
+   ul {
+     display: block;
+     width: 124px;
+     height: 20px;
+     margin: 25px auto;
+     padding: 0;
+     li {
+       list-style: none;
+       display: inline-block;
+       float: left;
+       margin: 0 8px;
+       a {
+         color: #fff;
+         cursor: pointer;
+         font-size: 16px;
+       }
+       &:nth-child(1):hover a {color: #3B5998;}
+       &:nth-child(2):hover a {color: #aaa;}
+       &:nth-child(3):hover a {color: #1DA1F2;}
+       &:nth-child(4):hover a {color: #DB4437;}
+     }
+   }
+   .scroll-to-home {
+     display: block;
+     margin: 0 auto;
+     background-color: $yellow;
+     height: 50px;
+     width: 50px;
+     text-decoration: none;
+     position: relative;
+     cursor: pointer;
+     transition: .2s;
+     &:hover {
+       color: #fff;
+       background-color: #d8c61e;
+     }
+     img {
+       position: absolute;
+       top: 50%;
+       left: 50%;
+       transform: translate(-50%, -50%);
+     }
    }
  }
