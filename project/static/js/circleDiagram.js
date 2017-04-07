@@ -17,4 +17,19 @@ var drawCircle = function(selector){
         }, 1);
     });
 };
-drawCircle('.circle-diagram');
+
+var skills = document.getElementById('skills');
+var workerCard = document.getElementsByClassName('worker-card');
+var showing2 = true;
+
+
+document.addEventListener('scroll', function () {
+    var scrolled = window.pageYOffset + window.innerHeight;
+    var target = skills.parentElement.offsetTop + skills.offsetTop + 200;
+    if (scrolled > target) {
+      if (showing2) {
+        drawCircle('.circle-diagram');
+        showing2 = false;
+      }
+    }
+});

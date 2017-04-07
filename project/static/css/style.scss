@@ -844,3 +844,49 @@ header {
      }
    }
  }
+
+ #contact-us {
+   padding: 60px 0;
+   p, h2, h3, h4 {
+     text-align: center;
+   }
+   h2 {
+     font-family: OswaldBold;
+   }
+   p {
+     font-family: OswaldLight;
+     color: rgb(112,112,112);
+     font-size: 16px;
+     margin-bottom: 60px;
+   }
+   h2, h3, h4 {
+     text-transform: uppercase;
+   }
+   h3 {
+     margin-top: 10px;
+     margin-bottom: 27px;
+   }
+   .divider {
+     display: block;
+     margin: 20px auto;
+   }
+   .icon {
+       position: relative;
+       width: 50px;
+       height: 50px;
+       margin: 0 auto;
+       background-color: transparent;
+       img {
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         cursor: pointer;
+       }
+   }
+   .row p {
+      font-size: 20px;
+      color: rgb( 81, 81, 81 );
+      margin: 0;
+   }
+ }

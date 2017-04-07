@@ -1,10 +1,21 @@
+var proudNumbers = document.getElementById("proud-numbers");
 var counters = document.getElementsByClassName("counter");
 var number;
+var showing = true;
 
-for (var i = 0; i < counters.length; i++) {
-    number = +counters[i].innerHTML;
-     countNumbers(counters[i], number);
-}
+document.addEventListener('scroll', function () {
+    var scrolled = window.pageYOffset + window.innerHeight;
+    var target = proudNumbers.offsetTop;
+    if (scrolled > target) {
+      if (showing) {
+        for (var i = 0; i < counters.length; i++) {
+            number = +counters[i].innerHTML;
+            countNumbers(counters[i], number);
+        }
+        showing = false;
+      }
+    }
+});
 
 function countNumbers(counter, number) {
     var i = 0;
