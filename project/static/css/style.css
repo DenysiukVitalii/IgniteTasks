@@ -523,9 +523,23 @@ header {
   font-size: 16px; }
 #team img {
   margin: 0 auto; }
-@media screen and (max-width: 992px) {
-  #team .worker {
-    margin-bottom: 40px; } }
+#team .worker {
+  cursor: pointer;
+  margin-bottom: 50px; }
+  @media screen and (max-width: 992px) {
+    #team .worker {
+      margin-bottom: 40px; } }
+#team .pointer {
+  position: relative; }
+  @media screen and (min-width: 768px) {
+    #team .pointer:after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -50px;
+      border: 30px solid transparent;
+      border-bottom: 20px solid #131316; } }
 #team .worker-info {
   text-align: center;
   border-bottom: 2px solid #ccc; }
@@ -534,8 +548,8 @@ header {
   #team .worker-info .worker-name {
     color: #ffe600; }
 #team #worker-cards {
-  margin-top: 50px;
-  padding-top: 65px;
+  display: none;
+  padding-top: 60px;
   background-color: #131316;
   color: #fff; }
   @media screen and (min-width: 768px) {
@@ -545,7 +559,8 @@ header {
     position: relative; }
     #team #worker-cards .name h4 {
       color: #ffe600;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      margin: 0; }
     #team #worker-cards .name img {
       position: absolute;
       top: 50%;
@@ -579,24 +594,8 @@ header {
       left: 50%;
       transform: translate(-50%, -50%); }
   #team #worker-cards .worker-card {
-    position: relative; }
-    @media screen and (min-width: 768px) {
-      #team #worker-cards .worker-card:before {
-        content: '';
-        position: absolute;
-        left: 15%;
-        top: -112px;
-        border: 30px solid transparent;
-        border-bottom: 20px solid #131316; } }
-    @media screen and (max-width: 768px) {
-      #team #worker-cards .worker-card:before {
-        content: '';
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        top: -112px;
-        border: 30px solid transparent;
-        border-bottom: 20px solid #131316; } }
+    position: relative;
+    display: none; }
 #team #skills {
   margin-top: 40px;
   padding-top: 60px;

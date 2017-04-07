@@ -683,8 +683,24 @@ header {
      margin: 0 auto;
    }
    .worker {
+     cursor: pointer;
+     margin-bottom: 50px;
      @media screen and (max-width: 992px) {
        margin-bottom: 40px;
+     }
+   }
+   .pointer {
+     position: relative;
+     @media screen and (min-width: 768px) {
+      &:after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -50px;
+        border: 30px solid transparent;
+        border-bottom: 20px solid $dark;
+       }
      }
    }
 
@@ -700,8 +716,8 @@ header {
    }
 
    #worker-cards {
-     margin-top: 50px;
-     padding-top: 65px;
+     display: none;
+     padding-top: 60px;
      background-color: $dark;
      color: #fff;
      @media screen and (min-width: 768px) {
@@ -714,6 +730,7 @@ header {
        h4 {
          color: $yellow;
          text-transform: uppercase;
+         margin: 0;
        }
        img {
          position: absolute;
@@ -758,28 +775,7 @@ header {
      }
     .worker-card {
       position: relative;
-      @media screen and (min-width: 768px) {
-       &:before {
-         content: '';
-         position: absolute;
-         left: 15%;
-         top: -112px;
-         border: 30px solid transparent;
-         border-bottom: 20px solid $dark;
-        }
-      }
-
-      @media screen and (max-width: 768px) {
-       &:before {
-         content: '';
-         position: absolute;
-         left: 50%;
-         transform: translateX(-50%);
-         top: -112px;
-         border: 30px solid transparent;
-         border-bottom: 20px solid $dark;
-        }
-      }
+      display: none;
     }
 
    }
