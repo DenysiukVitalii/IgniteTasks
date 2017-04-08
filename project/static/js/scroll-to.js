@@ -3,7 +3,7 @@ var header = document.getElementsByTagName('header')[0];
 var collectionOffsetTop = {};
 var selector;
 var element;
-
+var width = window.innerWidth;
 var scrolled = 0 || window.pageYOffset || document.documentElement.scrollTop;
 var SCROLL_DURATION = 200;
 
@@ -21,6 +21,7 @@ document.addEventListener('scroll', function() {
 });
 
 function toggleScroll(target, scrolled) {
+  target = target - header.clientHeight;
   var distance = Math.abs(target - scrolled);
   var initialDistance = distance;
   var speed = 0;
@@ -34,7 +35,7 @@ function toggleScroll(target, scrolled) {
       speed = speed > step ? speed - step : speed;
     }
     var positionY = scrolled < target ? target - distance : target + distance;
-    window.scrollTo(0, positionY - header.offsetHeight);
+    window.scrollTo(0, positionY);
     if (distance <= 0) {
       clearInterval(scrollInterval);
     }

@@ -739,6 +739,12 @@ header {
     @media screen and (max-width: 992px) {
       #send-message textarea {
         margin-top: 0; } }
+  #send-message #error-tip {
+    position: absolute;
+    bottom: -1.7em;
+    left: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0 10px; }
   #send-message textarea::-webkit-input-placeholder {
     color: #ccc; }
   #send-message textarea::-moz-placeholder {
@@ -814,11 +820,50 @@ footer {
       left: 50%;
       transform: translate(-50%, -50%); }
 
-#error-tip {
-  position: absolute;
-  bottom: -1.7em;
-  left: 15px;
-  background: rgba(255, 255, 255, 0.2);
-  padding: 0 10px; }
+#our-clients {
+  padding: 60px 0; }
+  #our-clients p, #our-clients h2, #our-clients h3, #our-clients h4 {
+    text-align: center; }
+  #our-clients h2 {
+    font-family: OswaldBold; }
+  #our-clients p {
+    font-family: OswaldLight;
+    color: #707070;
+    font-size: 16px;
+    margin-bottom: 30px; }
+  #our-clients h2, #our-clients h3, #our-clients h4 {
+    text-transform: uppercase; }
+  #our-clients h3 {
+    margin-top: 10px;
+    margin-bottom: 27px; }
+  #our-clients .divider {
+    display: block;
+    margin: 20px auto; }
+  #our-clients .slider-wrapper {
+    width: 100%;
+    overflow-x: hidden; }
+    #our-clients .slider-wrapper #slider-clients {
+      user-select: none;
+      -webkit-user-select: none;
+      width: 9999px; }
+      #our-clients .slider-wrapper #slider-clients .slide-c {
+        display: inline-block;
+        position: relative;
+        margin: 50px 20px; }
+        @media screen and (max-width: 992px) {
+          #our-clients .slider-wrapper #slider-clients .slide-c {
+            margin: 50px 24px; } }
+        @media screen and (max-width: 768px) {
+          #our-clients .slider-wrapper #slider-clients .slide-c {
+            margin: 50px 12px; } }
+        #our-clients .slider-wrapper #slider-clients .slide-c .slide-content {
+          width: 180px; }
+          @media screen and (max-width: 768px) {
+            #our-clients .slider-wrapper #slider-clients .slide-c .slide-content {
+              width: 80vw;
+              margin: 0 auto; } }
+          #our-clients .slider-wrapper #slider-clients .slide-c .slide-content img {
+            display: block;
+            margin: 0 auto; }
 
 /*# sourceMappingURL=style.css.map */
