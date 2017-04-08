@@ -926,7 +926,7 @@ header {
       outline: $yellow auto 5px;
     }
     @media screen and (max-width: 992px) {
-        margin-bottom: 20px;
+        margin-bottom: 30px;
     }
    }
 
@@ -1034,4 +1034,13 @@ header {
        transform: translate(-50%, -50%);
      }
    }
+ }
+
+ #error-tip{
+    // display: block;
+     position: absolute;
+     bottom: -1.7em;
+     left: 15px;
+     background: rgba(255, 255, 255, 0.2);
+     padding: 0 10px;
  }

@@ -699,13 +699,16 @@
       <h2>Send us a message</h2>
       <p class="description">Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus
         suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere.</p>
-      <div class="row">
-        <div class="col-md-4"><input type="text" placeholder="Your Name"></div>
-        <div class="col-md-4"><input type="text" placeholder="Your Mail"></div>
-        <div class="col-md-4"><input type="text" placeholder="Subject"></div>
-      </div>
-      <textarea name="name" placeholder="Enter message here..."></textarea>
-      <button>Send message</button>
+      <form id="form-validate">
+
+        <div class="row">
+          <div class="col-md-4"><div id="error-tip"></div><input type="text" name="name" placeholder="Your Name" data-tip="[a-zA-Z] only"></div>
+          <div class="col-md-4"><input type="text" name="email" placeholder="Your Mail" data-tip="[a-zA-Z][0-9] _ @ . only"></div>
+          <div class="col-md-4"><input type="text" name="subject" placeholder="Subject" data-tip="[a-zA-Z][0-9] only"></div>
+        </div>
+        <textarea name="name" placeholder="Enter message here..."></textarea>
+      <button id="btnSendMesg">Send message</button>
+      </form>
     </div>
   </section>
 
@@ -732,5 +735,6 @@
   <script src="static/js/counter.js"></script>
   <script src="static/js/circleDiagram.js"></script>
   <script src="static/js/team.js"></script>
+  <script src="static/js/formValidation.js"></script>
 </body>
 </html>
