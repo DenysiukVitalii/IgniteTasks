@@ -1,3 +1,4 @@
+ (function() {
  var sliderWrapper = document.getElementById('slider-clients');
  var slides = document.querySelectorAll('#slider-clients .slide-c');
 
@@ -28,3 +29,4 @@
  };
 
  autoplay = setInterval(autoplaySlides, INTERVAL_AUTOPLAY);
+})();
