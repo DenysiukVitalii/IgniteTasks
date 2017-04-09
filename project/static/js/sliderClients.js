@@ -1,7 +1,7 @@
  (function() {
  var sliderWrapper = document.getElementById('slider-clients');
  var slides = document.querySelectorAll('#slider-clients .slide-c');
-
+ var scrolled;
  var currentSlide = 0;
  var widthSlide = slides[0].offsetWidth + 2 * parseInt(getComputedStyle(slides[0]).marginLeft);
  var amountSlides = slides.length;
@@ -16,8 +16,8 @@
  }
 
  preparingSlider();
-
  var autoplaySlides = function () {
+   if (scrolled < sliderWrapper.offsetTop - sliderWrapper.clientHeight - 700) return;
      if (currentSlide === amountSlides - 1) {
        setTimeout(function() {
          sliderWrapper.style.transition = '0.5s';
@@ -29,4 +29,8 @@
  };
 
  autoplay = setInterval(autoplaySlides, INTERVAL_AUTOPLAY);
+
+ document.addEventListener('scroll', function() {
+   scrolled = window.pageYOffset || document.documentElement.scrollTop;
+ });
 })();

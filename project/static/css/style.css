@@ -866,4 +866,56 @@ footer {
             display: block;
             margin: 0 auto; }
 
+#responses-clients {
+  background-color: #131A1D;
+  color: #fff;
+  padding: 60px 0;
+  position: relative; }
+  #responses-clients p {
+    font-size: 20px; }
+  #responses-clients h5 {
+    font-size: 16px; }
+  #responses-clients .slider-responses {
+    position: relative;
+    width: 45vw;
+    overflow: hidden;
+    margin: 0 auto; }
+    @media screen and (max-width: 768px) {
+      #responses-clients .slider-responses {
+        width: 80vw; } }
+  #responses-clients .slider-wrapper-r {
+    width: 9999px;
+    position: relative;
+    float: left;
+    transition: 0.3s; }
+  #responses-clients .slide-r {
+    float: left;
+    position: relative; }
+  #responses-clients #slider-nav-r {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%); }
+  #responses-clients .dots {
+    display: block;
+    float: left;
+    cursor: pointer;
+    width: 6px;
+    height: 6px;
+    margin-right: 3px;
+    margin-left: 3px;
+    background-color: #fff; }
+  #responses-clients .active {
+    background-color: #ffe600 !important; }
+  #responses-clients .slide-content {
+    width: 45vw;
+    text-align: center;
+    margin-bottom: 30px; }
+    @media screen and (max-width: 768px) {
+      #responses-clients .slide-content {
+        width: 80vw; } }
+    #responses-clients .slide-content img {
+      display: block;
+      margin: 20px auto; }
+
 /*# sourceMappingURL=style.css.map */
