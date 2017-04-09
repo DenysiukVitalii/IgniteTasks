@@ -282,11 +282,15 @@ header {
 
  /*     ------     */
 
+/*  --- WE LOVE TO DO ---  */
  #love-to-do {
    padding: 60px 0;
    h2 {
      margin-top: 0;
      font-family: OswaldBold;
+   }
+   h4 {
+     margin-top: 0;
    }
    p, h2, h3, h4 {
      text-align: center;
@@ -329,6 +333,7 @@ header {
    }
  }
 
+/*  --- HOW WE DO IT ---  */
  #how-we-do-it {
    background-color: $darkblue;
    padding: 60px 0;
@@ -347,6 +352,7 @@ header {
       color:#fff;
     }
     h3 {
+      margin-top: 0;
       margin-bottom: 25px;
     }
     h2, h3{
@@ -378,6 +384,7 @@ header {
     }
  }
 
+/*  --- PORTFOLIO ---  */
  #portfolio {
    position: relative;
    padding: 60px 0;
@@ -395,12 +402,15 @@ header {
    h2, h3, h4 {
      text-transform: uppercase;
    }
+   h4 {
+     margin-top: 0;
+   }
    .discription {
      margin-bottom: 0;
    }
    .divider {
      display: block;
-     margin: 20px auto;
+     margin: 25px auto;
    }
 
    .filter-items {
@@ -411,6 +421,9 @@ header {
     left: 50%;
     transform: translateX(-50%);
     margin-top: 50px;
+    @media screen and (min-width: 768px) and (max-width: 992px) {
+       width: 547px;
+    }
 
     li {
       list-style: none;
@@ -461,7 +474,7 @@ header {
     margin-right: 0;
   }
   #works {
-    margin-top: 120px;
+    margin-top: 130px;
     width: 100%;
     @media screen and (max-width: 768px) {
        margin-top: 210px;
@@ -527,8 +540,9 @@ header {
   }
  }
 
+/* DO YOU LIKE OUT PORTFOLIO */
  #scroll-to-contact-us {
-   padding-bottom: 70px;
+   padding-bottom: 80px;
    .scroll-to-contact {
      display: block;
      margin: 0 auto;
@@ -569,7 +583,7 @@ header {
      cursor: pointer;
      color: #fff;
      background-color: $yellow;
-     padding: 10px 40px;
+     padding: 15px 40px;
      text-decoration: none;
      text-transform: uppercase;
      transition: .2s;
@@ -581,6 +595,7 @@ header {
 
  }
 
+/*  --- WE ARE PROUD OF THESE NUMBERS ---  */
  #proud-numbers {
    background-color: $darkblue;
    padding: 60px 0;
@@ -617,7 +632,7 @@ header {
    }
    .counter {
     font-family: OswaldBold;
-    padding-top: 20px;
+    padding-top: 25px;
    	font-size: 35px;
     color:#fff;
    }
@@ -625,7 +640,7 @@ header {
      font-family: OswaldBold;
    }
  }
-
+/*  --- ABOUT US ---  */
  #about-us {
    padding-top: 60px;
    p, h2, h3, h4 {
@@ -647,7 +662,7 @@ header {
    }
    .divider {
      display: block;
-     margin: 20px auto;
+     margin: 25px auto;
    }
    .row {
      margin-bottom: 40px;
@@ -671,9 +686,10 @@ header {
    }
  }
 
+/*  --- TEAM ---  */
  #team {
    h2 {
-      margin-top: 40px;
+      margin-top: 30px;
       font-family: OswaldBold;
       text-transform: uppercase;
    }
@@ -850,6 +866,140 @@ header {
    }
  }
 
+ /*  --- OUR CLIENTS ---  */
+ #our-clients {
+   padding: 60px 0;
+   p, h2, h3, h4 {
+     text-align: center;
+   }
+   h2 {
+     font-family: OswaldBold;
+   }
+   p {
+     font-family: OswaldLight;
+     color: rgb(112,112,112);
+     font-size: 16px;
+     margin-bottom: 30px;
+   }
+   h2, h3, h4 {
+     text-transform: uppercase;
+   }
+   h3 {
+     margin-top: 10px;
+     margin-bottom: 27px;
+   }
+   .divider {
+     display: block;
+     margin: 25px auto;
+   }
+
+   .slider-wrapper {
+     width: 100%;
+     overflow-x: hidden;
+
+
+    #slider-clients {
+       user-select: none;
+       -webkit-user-select: none;
+      	width: 9999px;
+        .slide-c {
+            display: inline-block;
+            position: relative;
+            margin: 50px 20px;
+            @media screen and (max-width: 992px) {
+              margin: 50px 24px;
+            }
+            @media screen and (max-width: 768px) {
+              margin: 50px 12px;
+            }
+            .slide-content {
+              width: 180px;
+
+              @media screen and (max-width: 768px) {
+                width: 80vw;
+                margin: 0 auto;
+              }
+
+              img {
+                display: block;
+                margin: 0 auto;
+              }
+            }
+          }
+        }
+      }
+    }
+
+/*  --- RESPONSES OF CLIENTS ---  */
+   #responses-clients {
+     background-color: $darkblue;
+     color:#fff;
+     padding: 60px 0;
+     position: relative;
+     p {
+       font-size: 20px;
+     }
+     h5 {
+      font-size: 16px;
+     }
+
+     .slider-responses {
+        position: relative;
+        width: 45vw;
+        overflow: hidden;
+        margin: 0 auto;
+        @media screen and (max-width: 768px) {
+          width: 80vw;
+        }
+      }
+
+      .slider-wrapper-r {
+        width: 9999px;
+        position: relative;
+        float: left;
+        transition: 0.5s; }
+
+      .slide-r {
+        float: left;
+        position: relative;
+       }
+
+      #slider-nav-r {
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+       }
+
+       .dots {
+          display: block;
+          float: left;
+          cursor: pointer;
+          width: 6px;
+          height: 6px;
+          margin-right: 3px;
+          margin-left: 3px;
+          background-color: #fff;
+        }
+        .active{
+          background-color: $yellow !important;
+        }
+        .slide-content {
+          width: 45vw;
+          @media screen and (max-width: 768px) {
+            width: 80vw;
+          }
+          text-align: center;
+          img{
+            display: block;
+            margin: 20px auto;
+          }
+          margin-bottom: 30px;
+        }
+   }
+
+
+/*  --- CONTACT US ---  */
  #contact-us {
    padding: 60px 0;
    p, h2, h3, h4 {
@@ -869,7 +1019,10 @@ header {
    }
    h3 {
      margin-top: 10px;
-     margin-bottom: 27px;
+     margin-bottom: 25px;
+   }
+   h4 {
+     margin-top: 0;
    }
    @media screen and (max-width: 992px) {
      .col-md-4 {
@@ -878,7 +1031,7 @@ header {
    }
    .divider {
      display: block;
-     margin: 20px auto;
+     margin: 25px auto;
    }
    .icon {
        position: relative;
@@ -901,6 +1054,9 @@ header {
    }
  }
 
+
+
+/*  --- SEND US MESSAGE ---  */
  #send-message {
    background-color: $darkblue;
    color: #fff;
@@ -981,6 +1137,7 @@ header {
    }
  }
 
+/*  --- FOOTER ---  */
  footer {
    background-color: $dark;
    color: #fff;
@@ -1043,134 +1200,3 @@ header {
      }
    }
  }
-
- #our-clients {
-   padding: 60px 0;
-   p, h2, h3, h4 {
-     text-align: center;
-   }
-   h2 {
-     font-family: OswaldBold;
-   }
-   p {
-     font-family: OswaldLight;
-     color: rgb(112,112,112);
-     font-size: 16px;
-     margin-bottom: 30px;
-   }
-   h2, h3, h4 {
-     text-transform: uppercase;
-   }
-   h3 {
-     margin-top: 10px;
-     margin-bottom: 27px;
-   }
-   .divider {
-     display: block;
-     margin: 20px auto;
-   }
-
-   .slider-wrapper {
-     width: 100%;
-     overflow-x: hidden;
-
-
-    #slider-clients {
-       user-select: none;
-       -webkit-user-select: none;
-      	width: 9999px;
-        .slide-c {
-            display: inline-block;
-            position: relative;
-            margin: 50px 20px;
-            @media screen and (max-width: 992px) {
-              margin: 50px 24px;
-            }
-            @media screen and (max-width: 768px) {
-              margin: 50px 12px;
-            }
-            .slide-content {
-              width: 180px;
-
-              @media screen and (max-width: 768px) {
-                width: 80vw;
-                margin: 0 auto;
-              }
-
-              img {
-                display: block;
-                margin: 0 auto;
-              }
-            }
-          }
-        }
-      }
-    }
-
-   #responses-clients {
-     background-color: $darkblue;
-     color:#fff;
-     padding: 60px 0;
-     position: relative;
-     p {
-       font-size: 20px;
-     }
-     h5 {
-      font-size: 16px;
-     }
-
-     .slider-responses {
-        position: relative;
-        width: 45vw;
-        overflow: hidden;
-        margin: 0 auto;
-        @media screen and (max-width: 768px) {
-          width: 80vw;
-        }
-      }
-
-      .slider-wrapper-r {
-        width: 9999px;
-        position: relative;
-        float: left;
-        transition: 0.3s; }
-
-      .slide-r {
-        float: left;
-        position: relative;
-
-       }
-
-      #slider-nav-r {
-          position: absolute;
-          bottom: 0;
-          left: 50%;
-          transform: translateX(-50%);
-       }
-
-       .dots {
-          display: block;
-          float: left;
-          cursor: pointer;
-          width: 6px;
-          height: 6px;
-          margin-right: 3px;
-          margin-left: 3px;
-          background-color: #fff;
-        }
-        .active{
-          background-color: $yellow !important;
-        }
-        .slide-content {
-          width: 45vw;
-          @media screen and (max-width: 768px) {
-            width: 80vw;
-          }
-          text-align: center;
-          img{
-            display: block;
-            margin: 20px auto;
-          }
-          margin-bottom: 30px;
-        }
-   }
