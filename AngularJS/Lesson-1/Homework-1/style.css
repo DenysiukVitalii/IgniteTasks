@@ -1,0 +1,23 @@
+
+.form-control {
+  margin-bottom: 20px !important;
+}
+textarea {
+  resize: none;
+}
+section {
+  padding: 40px 0;
+}
+input {
+  height: 36px;
+}
+input[type="checkbox"] {
+  transform: translate(25%, 25%);
+}
+.isComplete, tr {
+  cursor: pointer;
+}
+.input-group {
+  width: 30%;
+  margin: 0 auto;
+}

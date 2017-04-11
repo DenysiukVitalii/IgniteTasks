@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="ToDoList">
+<head>
+    <title>ToDo List</title>
+    <script src="../../Libraries/angular.js"></script>
+    <link href="../../Libraries/bootstrap.css" rel="stylesheet" />
+    <link href="../../Libraries/bootstrap-theme.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+    <script>
+        var model = [];
+
+        angular.module('ToDoList', [])
+        .controller('ToDoListCtrl', function($scope) {
+            $scope.data = model;
+            $scope.addNewTask = function() {
+                $scope.data.push({
+                  taskName: $scope.taskName,
+                  description: $scope.description,
+                  date: $scope.dueDate,
+                  done: $scope.done
+                });
+
+                $scope.taskName = "";
+                $scope.dueDate = "";
+                $scope.description = "";
+                $scope.done = "";
+            }
+
+            $scope.showText = function (done) {
+                return done ? "Сделано" : "Не сделано";
+            }
+
+            $scope.setStyle = function (done) {
+                return done ? "color:green" : "color:red; font-weight: bold";
+            }
+
+            $scope.removeTask = function (task, $index) {
+              $scope.data.splice($index, 1);
+            };
+        });
+
+    </script>
+
+</head>
+<body>
+<section ng-controller="ToDoListCtrl">
+    <div class="container">
+
+        <h3>ToDo List</h3>
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Date</th>
+                    <th>Completed</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tr ng-repeat="item in data" ng-click="editing = true">
+                <td>
+                  <span ng-hide="editing">{{item.taskName}}</span>
+                  <form ng-show="editing" ng-submit="editing = false">
+                      <input type="text" ng-model="item.taskName" placeholder="Task" ng-required/>
+                  </form>
+                </td>
+                <td>
+                  <span ng-hide="editing">{{item.description}}</span>
+                  <form ng-show="editing" ng-submit="editing = false">
+                      <input type="text" ng-model="item.description" placeholder="Description" ng-required/>
+                  </form>
+                </td>
+                <td>
+                  <span ng-hide="editing">{{item.date | date:'dd.MM.yyyy'}}</span>
+                  <form ng-show="editing" ng-submit="editing = false">
+                      <input type="date" ng-model="item.date" placeholder="Date" ng-required/>
+                  </form>
+                </td>
+                <td>
+                    <span class="isComplete" ng-click="item.done = !item.done" style="{{setStyle(item.done)}}">
+                        {{showText(item.done)}}
+                    </span>
+                </td>
+                <td>
+                  <form ng-show="editing" ng-submit="editing = false">
+                    <button class="btn" type="submit">Save</button>
+                    <button class="btn" ng-click="removeTask(item, $index)">Delete</button>
+                  </form>
+                </td>
+            </tr>
+        </table>
+
+        <div class="input-group">
+            <h3>Name</h3>
+            <input type="text" ng-model="taskName" class="form-control">
+            <h3>Due Date</h3>
+            <input type="date" ng-model="dueDate" class="form-control" ng-required>
+            <h3>Description</h3>
+            <textarea name="name" rows="3" cols="80" ng-model="description" class="form-control"></textarea>
+            <h3>Completed
+              <input type="checkbox" ng-model="done">
+            </h3>
+            <input type="button" class="btn btn-primary" value="Add" ng-click="addNewTask()"style="display: block; margin-top: 20px">
+        </div>
+    </div>
+</section>
+</body>
+</html>
