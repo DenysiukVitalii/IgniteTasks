@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="styleClassApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 1 | Classwork-3</title>
+
+    <script src="../../Libraries/angular.js"></script>
+    <link href="../../Libraries/bootstrap.css" rel="stylesheet"/>
+    <link href="../../Libraries/bootstrap-theme.css" rel="stylesheet"/>
+    <style>
+        section {
+            margin: 50px;
+            position: relative;
+            width: 200px;
+        }
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: #eee;
+        }
+        button {
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          margin-top: 10px;
+        }
+        .red {
+            background-color: tomato;
+        }
+        .border {
+            border: 3px solid red;
+        }
+    </style>
+
+    <script>
+        angular.module("styleClassApp", [])
+        .controller("styleClassAppCtrl", function ($scope) {
+            $scope.styleClass = "";
+            $scope.setStyle = function () {
+              $scope.styleClass = ["red", "border"];
+            }
+        });
+    </script>
+</head>
+<body>
+  <section ng-controller="styleClassAppCtrl">
+    <div ng-class="styleClass"></div>
+    <button class="btn btn-default" ng-click="setStyle()">Set style</button>
+  </section>
+</body>
+</html>
