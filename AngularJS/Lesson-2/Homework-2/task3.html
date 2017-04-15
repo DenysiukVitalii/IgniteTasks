@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="testApp">
+<head>
+    <meta charset="utf-8">
+    <title>Task 3 | Homework-2</title>
+    <script src="../../Libraries/angular.js"></script>
+    <link href="../../Libraries/bootstrap.css" rel="stylesheet"/>
+    <link href="../../Libraries/bootstrap-theme.css" rel="stylesheet"/>
+    <style>
+        label {
+           display: block;
+        }
+        hr {
+           width: 40%;
+           margin-left: 0;
+        }
+    </style>
+    <script>
+        var model = [{
+          question: "How many degrees do you want the water to boil?",
+          answers: ["20","80","50","100"]
+        },
+        {
+          question: "How many cold colors in the rainbow?",
+          answers: ["3 colors","5 colors","4 colors","2 colors"]
+        },
+        {
+          question: "In which country is the largest population in the world?",
+          answers: ["USA","India","China","Japan"]
+        },
+        {
+          question: "Which building is the highest in the world?",
+          answers: ["Tokyo Sky Tree","Burj Khalifa","Petronas Towers","Empire State Building"]
+        },
+        {
+          question: "Who is the richest man in the world?",
+          answers: ["Warren Buffett","Mark Zukerberg","Jim Walton","Bill Gates"]
+        },
+        {
+          correctAnswers: ['3','0','2','1','3']
+        }];
+
+        angular.module('testApp', [])
+        .controller('mainCtrl', function ($scope) {
+            $scope.data = model;
+            var correctAnswersItem = $scope.data[$scope.data.length - 1];
+
+            function init() {
+              $scope.correctCount = 0;
+              $scope.question = '0';
+              $scope.result = [];
+            }
+
+            init();
+
+            $scope.showResult = function () {
+              correctAnswersItem.correctAnswers.forEach((item, i) => {
+                if (item === $scope.result[i]) $scope.correctCount++;
+              });
+              alert("Result: " + $scope.correctCount + " correct answers!");
+              init();
+            };
+        });
+    </script>
+</head>
+<body>
+  <section ng-controller="mainCtrl">
+    <div class="container">
+      <h2>Questions</h2>
+      <div class="form-group">
+        <div class="radio" ng-repeat="que in data" ng-hide="$last">
+          <label><input type="radio" ng-model='$parent.question' value="{{$index}}"> {{que.question}} </label>
+        </div>
+      </div>
+      <hr />
+      <h3>Answers</h3>
+      <div ng-switch on="question">
+        <div class="form-group" ng-repeat="que in data" ng-if="$index == question">
+           <label ng-repeat="answer in que.answers">
+             <input type="radio" ng-model='result[$parent.$index]' value="{{$index}}" > {{answer}}
+           </label>
+        </div>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" ng-click="showResult()">Finish test</button>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
