@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="changeClassApp">
+<head>
+    <title>Task 1 | Homework-3</title>
+    <script src="../../Libraries/angular.js"></script>
+    <link href="../../Libraries/bootstrap.css" rel="stylesheet" />
+    <link href="../../Libraries/bootstrap-theme.css" rel="stylesheet" />
+    <style>
+      section {
+        margin: 50px;
+      }
+      p {
+        width: 50%;
+      }
+      .form-group {
+        margin-bottom: 5px;
+      }
+      .bgc {
+          background-color: #4868a8;
+      }
+      .border {
+          border: 1px solid tomato;
+      }
+      .color {
+          color: #fff;
+      }
+  </style>
+  <script>
+      var app = angular.module("changeClassApp", []);
+      app.controller("changeClassAppCtrl", function ($scope) {
+          $scope.styleObj = {
+              bgc: false,
+              border: false,
+              color: false
+          }
+      });
+  </script>
+</head>
+<body>
+<section ng-controller="changeClassAppCtrl">
+  <div class="container">
+    <div class="form-group">
+      <label><input type="checkbox" ng-model="styleObj.bgc"> Background-color</label>
+    </div>
+    <div class="form-group">
+      <label><input type="checkbox" ng-model="styleObj.border"> Border</label>
+    </div>
+    <div class="form-group">
+      <label><input type="checkbox" ng-model="styleObj.color"> Color</label>
+    </div>
+    <p ng-class="styleObj">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+  </div>
+</section>
+</body>
+</html>

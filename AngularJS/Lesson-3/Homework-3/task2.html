@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="filterSearchApp">
+<head>
+    <title>Task 2 | Homework-3</title>
+    <script src="../../Libraries/angular.js"></script>
+    <link href="../../Libraries/bootstrap.css" rel="stylesheet" />
+    <link href="../../Libraries/bootstrap-theme.css" rel="stylesheet" />
+    <style>
+        section {
+          display: block;
+          width: 400px;
+          margin: 0 auto;
+        }
+        .input-group {
+            width: 400px;
+            margin: 20px 0;
+        }
+        .divs div {
+            padding: 14px 0;
+            height: 50px;
+            width: 400px;
+            text-align: center;
+        }
+        .greenyellow {
+            background-color: greenyellow;
+        }
+        .limegreen {
+            background-color: limegreen;
+        }
+    </style>
+    <script>
+        var app = angular.module("filterSearchApp", []);
+        app.controller("filterSearchAppCtrl", function ($scope) {
+            $scope.divs = [
+                {
+                    text: "Exercitationem, esse, ipsa.",
+                    style: "greenyellow"
+                }, {
+                    text: "Lorem ipsum dolor sit amet",
+                    style: "limegreen"
+                }, {
+                    text: "Provident repellendus deserunt",
+                    style: "greenyellow"
+                }, {
+                    text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+                    style: "limegreen"
+                }, {
+                    text: "Facilis culpa neque laboriosam vero.",
+                    style: "greenyellow"
+                }, {
+                    text: "Quasi praesentium esse unde.",
+                    style: "limegreen"
+                }, {
+                    text: "Exercitationem, esse",
+                    style: "greenyellow"
+                }, {
+                    text: "consectetur adipisicing",
+                    style: "limegreen"
+                }, {
+                    text: "deserunt similique natus",
+                    style: "greenyellow"
+                }, {
+                    text: "similique natus consequatur autem, error inventore optio",
+                    style: "limegreen"
+                }
+            ];
+
+            var text = "";
+            $scope.searchText = function () {
+                text = $scope.userText;
+            }
+
+            $scope.filterText = function (item) {
+                if (~item.text.indexOf(text)) {
+                    return item;
+                }
+            }
+        });
+    </script>
+</head>
+<body>
+
+  <section ng-controller="filterSearchAppCtrl">
+    <div class="input-group">
+      <input class="form-control" type="text" ng-model="userText" placeholder="Search...">
+      <span class="input-group-btn">
+          <button class="btn btn-primary" type="button" ng-click="searchText()">Search</button>
+      </span>
+    </div>
+    <div class="divs" ng-repeat="div in divs | filter: filterText ">
+        <div ng-class="div.style">{{ div.text }}</div>
+    </div>
+  </section>
+
+</body>
+</html>
