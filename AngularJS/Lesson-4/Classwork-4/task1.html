@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="countClicksApp">
+<head>
+    <meta charset="utf-8">
+    <title>Task 1 | Classwork-4</title>
+    <script src="../../Libraries/angular.js"></script>
+    <link href="../../Libraries/bootstrap.css" rel="stylesheet"/>
+    <link href="../../Libraries/bootstrap-theme.css" rel="stylesheet"/>
+    <script>
+        angular.module('countClicksApp', [])
+        .controller('mainCtrl', ['$scope', 'clickCounterService', function ($scope, clickCounterService) {
+            $scope.msg = "clicks : ";
+            $scope.output = "clicks : 0";
+            $scope.countClicks = function () {
+                $scope.output = clickCounterService($scope.msg);
+            }
+        }])
+
+        .factory("clickCounterService", function ($log) {
+            var clickCounter = 1;
+            return function (msg) {
+                var output = msg + clickCounter++;
+                $log.log(output);
+                return output;
+            };
+        });
+    </script>
+</head>
+<body>
+  <section ng-controller="mainCtrl">
+    <input type="button" class="btn btn-default" ng-click="countClicks()" value="Click me">
+    <h3>{{output}}</h3>
+  </section>
+</body>
+</html>
