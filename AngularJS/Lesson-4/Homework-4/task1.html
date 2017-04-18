@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="servicesCalcApp">
+<head>
+    <meta charset="utf-8">
+    <title>Task 1 | Homework-4</title>
+    <script src="../../Libraries/angular.js"></script>
+    <link href="../../Libraries/bootstrap.css" rel="stylesheet"/>
+    <link href="../../Libraries/bootstrap-theme.css" rel="stylesheet"/>
+
+<script>
+       angular.module('servicesCalcApp', [])
+
+       .factory("factoryCalc", function () {
+           return {
+               add: (a, b) => a + b,
+               sub: (a, b) => a - b,
+               mult: (a, b) => a * b,
+               div: (a, b) => a / b
+           }
+       })
+
+       .service("serviceCalc", function () {
+           this.add = (a, b) => a + b;
+           this.sub = (a, b) => a - b;
+           this.mult = (a, b) => a * b;
+           this.div = (a, b) => a / b;
+       })
+
+       .provider("providerCalc", function () {
+           return {
+               $get: function () {
+                   return {
+                     add: (a, b) => a + b,
+                     sub: (a, b) => a - b,
+                     mult: (a, b) => a * b,
+                     div: (a, b) => a / b
+                   }
+               }
+           }
+       })
+
+       .controller('mainCtrl', ['$scope', "factoryCalc", "serviceCalc", "providerCalc", function ($scope, factoryCalc, serviceCalc, providerCalc) {
+           $scope.num1 = "";
+           $scope.num2 = "";
+           $scope.res1 = "";
+           $scope.res2 = "";
+           $scope.res3 = "";
+           $scope.add = function () {
+               $scope.res1 = factoryCalc.add(+$scope.num1, +$scope.num2);
+               $scope.res2 = serviceCalc.add(+$scope.num1, +$scope.num2);
+               $scope.res3 = providerCalc.add(+$scope.num1, +$scope.num2);
+           };
+           $scope.sub = function () {
+               $scope.res1 = factoryCalc.sub(+$scope.num1, +$scope.num2);
+               $scope.res2 = serviceCalc.sub(+$scope.num1, +$scope.num2);
+               $scope.res3 = providerCalc.sub(+$scope.num1, +$scope.num2);
+           };
+           $scope.mult = function () {
+               $scope.res1 = factoryCalc.mult(+$scope.num1, +$scope.num2);
+               $scope.res2 = serviceCalc.mult(+$scope.num1, +$scope.num2);
+               $scope.res3 = providerCalc.mult(+$scope.num1, +$scope.num2);
+           };
+           $scope.div = function () {
+               $scope.res1 = factoryCalc.div(+$scope.num1, +$scope.num2);
+               $scope.res2 = serviceCalc.div(+$scope.num1, +$scope.num2);
+               $scope.res3 = providerCalc.div(+$scope.num1, +$scope.num2);
+           };
+       }]);
+   </script>
+</head>
+<body>
+  <section ng-controller="mainCtrl">
+       <div class="input-group">
+           <input type="text" class="form-control" ng-model="num1">
+           <input type="text" class="form-control" ng-model="num2">
+       </div>
+       <div class="btn-block">
+           <button class="btn btn-default" ng-click="add()">+</button>
+           <button class="btn btn-default" ng-click="sub()">-</button>
+           <button class="btn btn-default" ng-click="mult()">*</button>
+           <button class="btn btn-default" ng-click="div()">/</button>
+       </div>
+       <div>factoryCalc : {{res1}}</div>
+       <div>serviceCalc : {{res2}}</div>
+       <div>providerCalc : {{res3}}</div>
+  </section>
+</body>
+</html>
