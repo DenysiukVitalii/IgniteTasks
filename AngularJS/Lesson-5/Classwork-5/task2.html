@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="timerApp">
+<head>
+    <meta charset="utf-8">
+    <title>Task 2 | Classwork-5</title>
+    <script src="../../Libraries/angular.js"></script>
+    <link href="../../Libraries/bootstrap.css" rel="stylesheet"/>
+    <link href="../../Libraries/bootstrap-theme.css" rel="stylesheet"/>
+    <style>
+      section {
+        margin: 20px;
+      }
+    </style>
+    <script>
+        angular.module("timerApp", [])
+        .controller("mainCtrl", ["$scope", "$interval", function ($scope, $interval) {
+            $scope.time = 0;
+            var counter;
+            $scope.startTimer = function () {
+                $scope.time = 0;
+                counter = $interval(function () {
+                    $scope.time++;
+                }, 1000)
+            };
+            $scope.stopTimer = function () {
+                $interval.cancel(counter);
+            }
+        }]);
+    </script>
+</head>
+<body>
+  <section ng-controller="mainCtrl">
+    <h2>{{time}}</h2>
+    <button class="btn btn-success" ng-click="startTimer()"> Start </button>
+    <button class="btn btn-danger" ng-click="stopTimer()"> Stop </button>
+  </section>
+</body>
+</html>
