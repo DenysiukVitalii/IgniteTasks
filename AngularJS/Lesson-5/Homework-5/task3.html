@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="stopwatchApp">
+<head>
+    <meta charset="utf-8">
+    <title>Task 3 | Homework-5</title>
+    <script src="../../Libraries/angular.js"></script>
+    <link href="../../Libraries/bootstrap.css" rel="stylesheet"/>
+    <link href="../../Libraries/bootstrap-theme.css" rel="stylesheet"/>
+    <script>
+       angular.module("stopwatchApp", [])
+       .controller("mainCtrl", ["$scope", "$interval", "$filter", function ($scope, $interval, $filter) {
+           var time = 0;
+           var counter;
+
+           $scope.displayStopwatch = $filter('date')(time, "mm:ss.sss").slice(0, -1);
+
+           $scope.start = function () {
+               counter = $interval(function () {
+                   time += 25;
+                   $scope.displayStopwatch = $filter('date')(time, "mm:ss.sss").slice(0, -1);
+               }, 25);
+           };
+
+           $scope.stop = function () {
+               $interval.cancel(counter);
+           };
+
+           $scope.clear = function () {
+               time = 0;
+               $scope.displayStopwatch = $filter('date')(time, "mm:ss.sss").slice(0, -1);
+           }
+       }]);
+       </script>
+</head>
+<body>
+  <section ng-controller="mainCtrl">
+    <div class="container">
+      <h1>{{displayStopwatch}}</h1>
+      <button class="btn btn-success" ng-click="start()">Start</button>
+      <button class="btn btn-danger" ng-click="stop()">Stop</button>
+      <button class="btn btn-default" ng-click="clear()">Clear</button>
+    </div>
+  </section>
+</body>
+</html>
