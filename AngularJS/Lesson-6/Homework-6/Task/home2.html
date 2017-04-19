@@ -1,0 +1,22 @@
+﻿<form name="contactForm">
+ <label>username:   <input type="text" class="input-lg" name="userName"/></label>
+ <label>age:   <input type="text" class="input-lg" name="age" /></label>
+ <label>email: <input type="email" class="input-lg" name="userEmail" /></label>
+    <label>employed: <input type="checkbox" name="employed"></label>
+
+</form>
+
+<table class="table">
+    <tr>
+        <th>name</th>
+        <th>age</th>
+        <th>email</th>
+        <th>employed</th>
+    </tr>
+    <tr ng-repeat="person in people" ng-click="goTo(person)">
+        <td>{{person.name}}</td>
+        <td>{{person.age}}</td>
+        <td>{{person.email}}</td>
+        <td>{{person.employed}}</td>
+    </tr>
+</table>

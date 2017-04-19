@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <title>Task 1 | Homework-6</title>
+    <script src="../../Libraries/angular.js"></script>
+    <script src="../../Libraries/angular_route.js"></script>
+    <link href="../../Libraries/bootstrap.css" rel="stylesheet"/>
+    <link href="../../Libraries/bootstrap-theme.css" rel="stylesheet"/>
+    <script>
+         angular.module("myApp", ["ngRoute"])
+         .config(function ($routeProvider) {
+             $routeProvider
+               .when("/home", {templateUrl: "task/home.html"})
+               .when("/contact", {templateUrl: "task/contact.html"})
+               .otherwise({redirectTo: "/home"});
+         });
+   </script>
+</head>
+<body>
+  <div class="well">
+     <ul class="nav nav-tabs">
+         <li><a href="#/home">home</a></li>
+         <li><a href="#/contact">contact</a></li>
+     </ul>
+  </div>
+  <div class="panel" ng-view></div>
+</body>
+</html>

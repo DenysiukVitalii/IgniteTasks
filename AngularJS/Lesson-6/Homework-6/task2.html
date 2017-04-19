@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <title>Task 2 | Homework-6</title>
+    <script src="../../Libraries/angular.js"></script>
+    <script src="../../Libraries/angular_route.js"></script>
+    <link href="../../Libraries/bootstrap.css" rel="stylesheet"/>
+    <link href="../../Libraries/bootstrap-theme.css" rel="stylesheet"/>
+    <script>
+      var people = [
+          {name: 'Vasya', age: 20, email: 'vasya@mail.ru', employed: false},
+          {name: 'Masha', age: 25, email: 'm@m', employed: true},
+          {name: 'Petya', age: 27, email: 'petya@stuff', employed: true},
+          {name: 'John', age: 36, email: 'johnDoe@mail', employed: true},
+          {name: 'Jane', age: 28, email: 'janeDoe@mail', employed: false}];
+
+        angular.module("myApp", ["ngRoute"])
+        .config(function ($routeProvider, $locationProvider) {
+            $routeProvider
+                    .when("/home", {templateUrl: "task/home2.html"})
+                    .when("/contact", {templateUrl: "task/contact.html"})
+                    .otherwise({redirectTo: "/home"});
+            $locationProvider.html5Mode({enable: true, requireBase: true});
+        })
+
+        .controller('mainCtrl', function ($scope, $location) {
+          $scope.people = people;
+          $scope.goToHome = function () {
+              $location.path('/home')
+            }
+          $scope.goToContact = function () {
+              $location.path('/contact')
+            }
+        })
+   </script>
+</head>
+<body ng-controller="mainCtrl">
+  <div class="panel panel-primary well">
+      <div class="nav nav-tabs">
+          <input class="btn btn-info" ng-click="goToHome()" type="button" value="Home">
+          <input class="btn btn-info" ng-click="goToContact()" type="button" value="Contact">
+      </div>
+  </div>
+  <div class="panel" ng-view></div>
+</body>
+</html>
