@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <title>Task 2 | Classwork-8</title>
+    <script src="../../Libraries/angular.js"></script>
+    <link href="../../Libraries/bootstrap.css" rel="stylesheet"/>
+    <link href="../../Libraries/bootstrap-theme.css" rel="stylesheet"/>
+    <script>
+        angular.module("myApp", []);
+        .directive("countBtn", function () {
+            return {
+                restrict: "A",
+                templateUrl: "templates/counter.html",
+                scope: { },
+                controller: function ($scope, $interval) {
+                    $scope.counter = 0;
+                    var count;
+                    $scope.startCounter = function () {
+                        $scope.buttonClicked = true;
+                        count = $interval(function () {
+                            $scope.counter++;
+                        }, 1000)
+                    };
+                    this.getCounter = function () {
+                        return $scope.counter;
+                    }
+                },
+                controllerAs : "ctrl"
+            }
+        })
+        .directive("logBtn", function () {
+            return {
+                restrict: "A",
+                require: "countBtn",
+                link: function (scope, elem, attributes, countBtnCtrl) {
+                    scope.$watch(countBtnCtrl.getCounter, function (value) {
+                        console.log("counter: " + value);
+                    });
+                }
+            }
+        });
+    </script>
+</head>
+<body >
+<div count-btn log-btn></div>
+</body>
+</html>

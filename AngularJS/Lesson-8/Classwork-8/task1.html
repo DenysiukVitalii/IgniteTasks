@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <title>Task 1 | Classwork-8</title>
+    <script src="../../Libraries/angular.js"></script>
+    <link href="../../Libraries/bootstrap.css" rel="stylesheet"/>
+    <link href="../../Libraries/bootstrap-theme.css" rel="stylesheet"/>
+    <script>
+            angular.module("myApp", [])
+            .controller("mainCtrl", ["$scope", "$interval", function ($scope, $interval) {
+                $scope.counter = 0;
+                $scope.startCounter = function () {
+                  $scope.buttonClicked = true;
+                    interval = $interval(function () {
+                        $scope.counter++;
+                    }, 1000)
+                }
+            }])
+            .directive("countBtn", function () {
+                return {
+                    restrict: "A",
+                    templateUrl: "templates/counter.html",
+                    controller: "mainCtrl"
+                }
+            })
+    </script>
+</head>
+<body ng-controller="mainCtrl">
+    <div count-btn></div>
+</body>
+</html>
