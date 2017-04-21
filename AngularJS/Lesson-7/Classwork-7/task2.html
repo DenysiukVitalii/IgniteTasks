@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <title>Task 2 | Classwork-7</title>
+    <script src="../../Libraries/angular.js"></script>
+    <link href="../../Libraries/bootstrap.css" rel="stylesheet"/>
+    <link href="../../Libraries/bootstrap-theme.css" rel="stylesheet"/>
+    <style>
+        input {
+          margin: 10px 0;
+        }
+    </style>
+    <script>
+        angular.module('myApp', [])
+        .controller('mainCtrl', function ($scope) {
+            $scope.items = [
+               { name: "Username", type: "text", placeholder: "Username" },
+               { name: "Login", type: "text", placeholder: "Login" },
+               { name: "Email", type: "email", placeholder: "Email" },
+               { name: "Password", type: "password", placeholder: "Password" }
+            ];
+            $scope.submitHandler = function(isvalid) {
+              (isvalid) ? alert('Form is Valid, sending data!)') : alert('Form is invalid!');
+            }
+        })
+        .directive('myForm', function () {
+            return {
+                link: function (scope, element, attributes) {
+                    scope.data = scope[attributes["myForm"]];
+                },
+                restrict: "A",
+                templateUrl: 'templates/myForm.html'
+            }
+        });
+      </script>
+  </head>
+  <body ng-controller='mainCtrl'>
+    <div class="container"><br>
+        <div my-form='items'></div>
+    </div>
+  </body>
+  </html>

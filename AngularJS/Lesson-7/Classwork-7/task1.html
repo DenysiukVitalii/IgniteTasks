@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <title>Task 1 | Classwork-7</title>
+    <script src="../../Libraries/angular.js"></script>
+    <link href="../../Libraries/bootstrap.css" rel="stylesheet"/>
+    <link href="../../Libraries/bootstrap-theme.css" rel="stylesheet"/>
+<script>
+        angular.module("myApp", [])
+        .controller("mainCtrl", function ($scope) {
+            $scope.items = [1, 2, 3, 4, 5]
+        })
+        .directive("arrayList", function () {
+            return {
+                scope: {
+                    items: "=arrayList"
+                },
+                template: "<h1>List: </h1><ul><li ng-repeat='item in items track by $index'>{{item}}</li></ul>"
+            }
+        });
+    </script>
+</head>
+<body ng-controller="mainCtrl">
+  <div array-list="items"></div>
+</body>
+</html>

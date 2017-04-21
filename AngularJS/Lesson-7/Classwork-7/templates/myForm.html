@@ -1,0 +1,6 @@
+<form class="form-control input-group" style="width:0"  novalidate name="myForm" ng-submit="submitHandler(myForm.$valid)">
+    <div ng-repeat=" item in data" class="form-group">
+        <input class="input form-control" type="{{item.type}}" placeholder="{{item.placeholder}}" ng-model="newUser[$index]" ng-pattern="{{item.pattern}}" required>
+    </div>
+    <input class="btn btn-primary" type="submit" ng-disabled="myForm.$invalid" value="Submit">
+</form>
