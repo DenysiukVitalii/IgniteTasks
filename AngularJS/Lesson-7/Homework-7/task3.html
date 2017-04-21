@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <title>Task 3 | Homework-7</title>
+    <script src="../../Libraries/angular.js"></script>
+    <link href="../../Libraries/bootstrap.css" rel="stylesheet"/>
+    <link href="../../Libraries/bootstrap-theme.css" rel="stylesheet"/>
+    <style>
+      .item {
+        display: inline-block;
+        margin: 10px 20px;
+      }
+      .item a {
+        text-transform: uppercase;
+      }
+    </style>
+    <script>
+        angular.module("myApp", [])
+        .controller("mainCtrl", function ($scope) {
+            $scope.items = [
+                {name: 'home', href: '#/'},
+                {name: 'services', href: '#/services'},
+                {name: 'works', href: '#/works'},
+                {name: 'clients', href: '#/clients'},
+                {name: 'contact', href: '#/contact'}
+            ];
+        })
+        .directive("myMenu", function () {
+            return {
+                restrict: "A",
+                replace: true,
+                scope: {
+                    array: "=myMenu"
+                },
+                template: '<div class="item" ng-repeat="item in array"><a href="{{item.href}}">{{item.name}}</a></div>'
+            };
+        });
+    </script>
+</head>
+<body ng-controller="mainCtrl">
+<div class="container text-center">
+    <div class="menu" my-menu="items"></div>
+</div>
+</body>
+</html>
