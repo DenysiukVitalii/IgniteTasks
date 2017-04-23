@@ -2,9 +2,8 @@
 <html lang="en" ng-app="anchorScrollApp">
 <head>
     <meta charset="utf-8">
-    <title>Task 3 | Homework-5</title>
+    <title>Task 2 | Homework-5</title>
     <script src="../../Libraries/angular.js"></script>
-    <script src="angular-smooth-scroll.js"></script>
     <link href="../../Libraries/bootstrap.css" rel="stylesheet"/>
     <link href="../../Libraries/bootstrap-theme.css" rel="stylesheet"/>
 
@@ -39,9 +38,16 @@
         }
     </style>
     <script>
-        angular.module("anchorScrollApp", ['smoothScroll'])
-        .controller('mainCtrl', ['$scope', function ($scope) {
+        angular.module("anchorScrollApp", [])
+        .run(function ($anchorScroll) {
+            $anchorScroll.yOffset = 30;
+        })
+        .controller('mainCtrl', ['$scope', '$location', '$anchorScroll', function ($scope, $location, $anchorScroll) {
             $scope.data = [1,2,3,4,5,6];
+            $location.path("/");
+            $scope.scrollTo = function (i) {
+                $location.hash("section" + i);
+            };
         }]);
     </script>
 </head>
@@ -51,7 +57,7 @@
       <header>
         <ul>
           <li ng-repeat="section in data">
-              <a href="#" scroll-to="section{{section}}" offset="30">Section {{section}}</a>
+              <a ng-click="scrollTo(section)">Section {{section}}</a>
           </li>
         </ul>
       </header>
