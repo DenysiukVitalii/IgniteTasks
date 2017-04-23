@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <title>Task 2 | Homework-8</title>
+    <script src="../../Libraries/angular.js"></script>
+    <link href="../../Libraries/bootstrap.css" rel="stylesheet"/>
+    <link href="../../Libraries/bootstrap-theme.css" rel="stylesheet"/>
+    <style>
+       .red {
+           color: red
+       }
+   </style>
+   <script>
+       angular.module("myApp", [])
+       .controller("mainCtrl", function ($scope) {
+           $scope.items = ["Item1", "Item2", "Item3", "Item4", "Item5", "Item6"];
+       })
+       .directive("createList", function () {
+           return {
+               restrict: "A",
+               priority: 1,
+               link: function (scope, element, attributes) {
+                   var items = scope.items;
+                   var ul = angular.element("<ul>");
+                   for (var i = 0; i < items.length; i++) {
+                       ul.append(angular.element("<li>").html(items[i]));
+                   }
+                   element.append(ul);
+               }
+           }
+       })
+       .directive("addStyle", function () {
+           return {
+               restrict: "A",
+               priority: 2,
+               link: function (scope, element, attributes) {
+                   var itemsList = element.find("li");
+                   for (var i = 1; i < itemsList.length; i+=2) {
+                      angular.element(itemsList[i]).addClass("red");
+                   }
+               }
+           }
+       })
+   </script>
+</head>
+<body ng-controller="mainCtrl">
+  <div class="well" create-list add-style></div>
+</body>
+</html>
