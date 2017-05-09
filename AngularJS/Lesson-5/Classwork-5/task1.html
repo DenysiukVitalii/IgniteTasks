@@ -1,64 +1,88 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="anchorScrollApp">
+<html lang="en" ng-app="servicesCalcApp">
 <head>
     <meta charset="utf-8">
-    <title>Task 1 | Classwork-5</title>
+    <title>Task 1 | Homework-5</title>
     <script src="../../Libraries/angular.js"></script>
     <link href="../../Libraries/bootstrap.css" rel="stylesheet"/>
     <link href="../../Libraries/bootstrap-theme.css" rel="stylesheet"/>
 
-    <style>
-        .sections {
-            border: 1px solid tomato;
-            padding: 10px;
-        }
-        header {
-            position: fixed;
-            left: 50%;
-            transform: translateX(-50%);
-            height: 30px;
-            width: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-        header li {
-            display: inline-block;
-            padding: 5px;
-            cursor: pointer;
-            color: #fff;
-        }
-        p {
-          font-size: 25px;
-        }
-    </style>
-    <script>
-        angular.module("anchorScrollApp", [])
-        .run(function ($anchorScroll) {
-            $anchorScroll.yOffset = 30;
-        })
-        .controller('mainCtrl', ['$scope', '$location', '$anchorScroll', function ($scope, $location, $anchorScroll) {
-            $scope.data = [1,2,3,4,5,6];
-            $location.path("/");
-            $scope.scrollTo = function (i) {
-                $location.hash("section" + i);
-            };
-        }]);
-    </script>
+<script>
+       angular.module('servicesCalcApp', [])
+
+       .factory("factoryCalc", function () {
+           return {
+               add: (a, b) => a + b,
+               sub: (a, b) => a - b,
+               mult: (a, b) => a * b,
+               div: (a, b) => a / b
+           }
+       })
+
+       .service("serviceCalc", function () {
+           this.add = (a, b) => a + b;
+           this.sub = (a, b) => a - b;
+           this.mult = (a, b) => a * b;
+           this.div = (a, b) => a / b;
+       })
+
+       .provider("providerCalc", function () {
+           return {
+               $get: function () {
+                   return {
+                     add: (a, b) => a + b,
+                     sub: (a, b) => a - b,
+                     mult: (a, b) => a * b,
+                     div: (a, b) => a / b
+                   }
+               }
+           }
+       })
+
+       .controller('mainCtrl', ['$scope', "factoryCalc", "serviceCalc", "providerCalc", function ($scope, factoryCalc, serviceCalc, providerCalc) {
+           $scope.num1 = "";
+           $scope.num2 = "";
+           $scope.res1 = "";
+           $scope.res2 = "";
+           $scope.res3 = "";
+           $scope.add = function () {
+               $scope.res1 = factoryCalc.add(+$scope.num1, +$scope.num2);
+               $scope.res2 = serviceCalc.add(+$scope.num1, +$scope.num2);
+               $scope.res3 = providerCalc.add(+$scope.num1, +$scope.num2);
+           };
+           $scope.sub = function () {
+               $scope.res1 = factoryCalc.sub(+$scope.num1, +$scope.num2);
+               $scope.res2 = serviceCalc.sub(+$scope.num1, +$scope.num2);
+               $scope.res3 = providerCalc.sub(+$scope.num1, +$scope.num2);
+           };
+           $scope.mult = function () {
+               $scope.res1 = factoryCalc.mult(+$scope.num1, +$scope.num2);
+               $scope.res2 = serviceCalc.mult(+$scope.num1, +$scope.num2);
+               $scope.res3 = providerCalc.mult(+$scope.num1, +$scope.num2);
+           };
+           $scope.div = function () {
+               $scope.res1 = factoryCalc.div(+$scope.num1, +$scope.num2);
+               $scope.res2 = serviceCalc.div(+$scope.num1, +$scope.num2);
+               $scope.res3 = providerCalc.div(+$scope.num1, +$scope.num2);
+           };
+       }]);
+   </script>
 </head>
 <body>
   <section ng-controller="mainCtrl">
-    <div class="container">
-      <header>
-        <ul>
-          <li ng-click="scrollTo(section)" ng-repeat="section in data">
-              Section {{section}}
-          </li>
-        </ul>
-      </header>
-      <div id="section{{section}}" class="sections" ng-repeat="section in data">
-          <h4>Header {{section}}</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita praesentium voluptate voluptatibus reprehenderit, esse ad a quod. Earum illum minima, cum cupiditate ipsum id quae quasi laboriosam, voluptatem fuga enim provident error fugiat perferendis dolores adipisci repellat odio harum laudantium, maxime fugit non ullam incidunt quidem rerum. Aut in facilis veniam atque cupiditate beatae distinctio, consequatur, officia, vel cum officiis sit quaerat excepturi recusandae architecto non? Delectus omnis consequuntur necessitatibus possimus nostrum. Doloribus, officia dolorum nobis, ipsa suscipit ab libero nulla reiciendis eum illo quam quas sint error soluta. Optio excepturi reprehenderit hic dicta rem reiciendis accusantium quidem quos pariatur. ipsum dolor sit amet, consectetur adipisicing elit. Vero soluta corporis asperiores atque minus animi, qui dicta explicabo repellat laborum, facere quisquam natus tempore magnam minima delectus deleniti perspiciatis aliquam obcaecati labore eos. Reiciendis ipsa deserunt id. Facere vitae sequi, debitis ipsa ullam, cum ad beatae animi accusantium sint expedita?</p>
-      </div>
-    </div>
+       <div class="input-group">
+           <input type="text" class="form-control" ng-model="num1">
+           <input type="text" class="form-control" ng-model="num2">
+       </div>
+       <div class="btn-block">
+           <button class="btn btn-default" ng-click="add()">+</button>
+           <button class="btn btn-default" ng-click="sub()">-</button>
+           <button class="btn btn-default" ng-click="mult()">*</button>
+           <button class="btn btn-default" ng-click="div()">/</button>
+       </div>
+       <div>factoryCalc : {{res1}}</div>
+       <div>serviceCalc : {{res2}}</div>
+       <div>providerCalc : {{res3}}</div>
   </section>
 </body>
 </html>
