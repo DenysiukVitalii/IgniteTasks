@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DraggableApp</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body ng-app="DraggableApp">
+    <div class="container" ng-controller="MainCtrl">
+
+      <div ng-drop="true" ng-drop-success="onDropComplete1($data,$event)">
+        <div ng-repeat="obj in draggableObjects" ng-drag="true" ng-drag-data="obj"> {{obj.name}}</div>
+        <div ng-repeat="obj in droppedObjects1" ng-drag="true" ng-drag-data="obj"
+             ng-drag-success="onDragSuccess1($data,$event)" ng-center-anchor="{{centerAnchor}}"> {{obj.name}} </div>
+      </div>
+
+      <div ng-drop="true" ng-drop-success="onDropComplete2($data,$event)" class="result">
+          <div ng-repeat="obj in droppedObjects2" ng-drag="true" ng-drag-data="obj"
+               ng-drag-success="onDragSuccess2($data,$event)" ng-center-anchor="{{centerAnchor}}">
+               {{obj.name}}
+          </div>
+      </div>
+
+      <div class="row text-center">
+          <button class="btn btn-primary btn-lg" ng-click="createJSON()">Send</button>
+      </div>
+
+    </div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ngDraggable/0.1.11/ngDraggable.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
