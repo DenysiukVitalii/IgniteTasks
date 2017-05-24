@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Task 1</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+
+  <link rel='stylesheet prefetch' href='https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.4/angular-material.css'>
+  <link rel='stylesheet prefetch' href='https://material.angularjs.org/1.1.4/docs.css'>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div ng-controller="AppCtrl" class="md-padding demo checkboxdemoSelectAll" ng-app="MyApp">
+    <div layout="row" layout-wrap="">
+      <div flex="100" layout="column">
+        <div>
+            <div layout="row" layout-wrap="" flex="">
+            <div flex-xs="" flex="50">
+              <md-checkbox aria-label="Select All" ng-checked="isChecked()" md-indeterminate="isIndeterminate()" ng-click="toggleAll()">
+                <span ng-if="isChecked()">Un-</span>Select All
+              </md-checkbox>
+            </div>
+              <div class="demo-select-all-checkboxes" flex="100" ng-repeat="item in items">
+                <md-checkbox ng-checked="exists(item, selected)" ng-click="toggle(item, selected)">
+                 {{ item }}
+                </md-checkbox>
+              </div>
+            </div>
+            <md-button class="md-raised md-primary" ng-click="createJSON()">Send</md-button>
+          </div>
+        </div>
+    </div>
+  </div>
+
+
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.min.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js'></script>
+<script src='https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.4/angular-material.js'></script>
+<script src="js/index.js"></script>
+
+</body>
+</html>
