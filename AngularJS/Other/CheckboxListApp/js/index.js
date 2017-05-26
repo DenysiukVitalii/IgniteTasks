@@ -1,7 +1,7 @@
 
-angular.module('MyApp',['ngMaterial'])
+angular.module('CheckboxListApp',['ngMaterial'])
 
-.controller('AppCtrl', function($scope) {
+.controller('CheckboxListAppCtrl', function($scope) {
   $scope.items = ['checkbox1','checkbox2','checkbox3','checkbox4','checkbox5'];
   $scope.selected = [];
   $scope.toggle = function (item, list) {
